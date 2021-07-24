@@ -1,15 +1,22 @@
 import colors from 'vuetify/es5/util/colors'
 
+
+const environment = process.env.NODE_ENV || 'local'
+const env = require(`./config/${environment}.ts`)
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - camp-ikitai-front',
     title: 'camp-ikitai-front',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -66,5 +73,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true,
+  },
+
+  env,
 }
