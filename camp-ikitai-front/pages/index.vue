@@ -1,20 +1,22 @@
 <template>
-  <v-row style="height: 450px" justify="center" align-content="center">
-    <v-col align="center">
-      あなただけのお気に入りが見つかる
-      <h2>キャンプ△イキタイ</h2>
-      <v-text-field v-model="searchWords" :label="message" type="text">
-        <template #append-outer>
-          <v-btn color="primary" @click="search">検索</v-btn>
-        </template>
-      </v-text-field>
-      <v-btn color="primary">現在地から探す</v-btn>
-
-      <div v-for="item in dispSiteList" :key="item.id">
-        {{ item.id }}
-      </div>
-    </v-col>
-  </v-row>
+  <div>
+    <v-row style="height: 450px" justify="center" align-content="center">
+      <v-col align="center">
+        あなただけのお気に入りが見つかる
+        <h2>キャンプ△イキタイ</h2>
+        <v-text-field v-model="searchWords" :label="message" type="text">
+          <template #append-outer>
+            <v-btn color="primary" @click="search">検索</v-btn>
+          </template>
+        </v-text-field>
+        <v-btn color="primary">現在地から探す</v-btn>
+      </v-col>
+    </v-row>
+    <camp-site-list-dialog
+      :dialog.sync="dialogShowFlag"
+      :camp-site-infoes="dispSiteList"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,6 +32,7 @@ export default class Index extends Vue {
   message = 'キャンプ場名・エリア'
   searchWords = ''
   dispSiteList: CampSiteInfo[] = []
+  dialogShowFlag = false
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
@@ -37,6 +40,7 @@ export default class Index extends Vue {
 
   async search() {
     this.dispSiteList = await this.campSiteService.search(this.searchWords)
+    this.dialogShowFlag = true
   }
 }
 </script>
