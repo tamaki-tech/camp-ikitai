@@ -1,10 +1,22 @@
 [
     {
         "id": 1,
-        "siteName": "飯能河原キャンプ場"
+        "siteName": "飯能河原キャンプ場",
+        "address": {
+            "zipCode": "357-0064",
+            "pref": "埼玉県",
+            "city": "飯能市",
+            "otherAddress": "久下４７２"
+        }
     },
     {
         "id": 2,
-        "siteName": "かわせみ河原キャンプ場"
+        "siteName": "かわせみ河原キャンプ場",
+        "address": {
+            "zipCode": "369-1221",
+            "pref": "埼玉県",
+            "city": "大里郡寄居町",
+            "otherAddress": "保田原３２１"
+        }
     }
 ]
