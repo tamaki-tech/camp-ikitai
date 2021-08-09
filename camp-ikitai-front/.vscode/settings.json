@@ -8,13 +8,13 @@
         "source.fixAll.eslint": true
     },
     "[vue]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
     "[javascript]": {
         "editor.formatOnSave": false
     },
     "[typescript]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
     "editor.formatOnSave": true,
     "vetur.validation.template": false

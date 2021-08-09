@@ -18,5 +18,15 @@
             "city": "大里郡寄居町",
             "otherAddress": "保田原３２１"
         }
+    },
+    {
+        "id": 3,
+        "siteName": "月川荘キャンプ場",
+        "address": {
+            "zipCode": "355-0225",
+            "pref": "埼玉県",
+            "city": "比企郡嵐山町",
+            "otherAddress": "鎌形2604"
+        }
     }
 ]

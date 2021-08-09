@@ -6,7 +6,7 @@
         <h2>キャンプ△イキタイ</h2>
         <v-text-field v-model="searchWords" :label="message" type="text">
           <template #append-outer>
-            <v-btn color="primary" @click="search">検索</v-btn>
+            <v-btn color="primary" @click="toSearchResultPage">検索</v-btn>
           </template>
         </v-text-field>
         <v-btn color="primary">現在地から探す</v-btn>
@@ -38,9 +38,8 @@ export default class Index extends Vue {
     this.campSiteService = await ServiceFactory.getContentService()
   }
 
-  async search() {
-    this.dispSiteList = await this.campSiteService.search(this.searchWords)
-    this.dialogShowFlag = true
+  toSearchResultPage() {
+    return this.$router.push(`/search?keyword=${this.searchWords}`)
   }
 }
 </script>
