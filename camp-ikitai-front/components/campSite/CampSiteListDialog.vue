@@ -1,42 +1,31 @@
 <template>
-  <v-dialog
-    v-model="dialogShowFlag"
-    fullscreen
-    hide-overlay
-    transition="dialog-bottom-transition"
-  >
-    <v-card>
-      <v-toolbar>
-        <v-btn icon @click="dialogShowFlag = false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-        <v-toolbar-title>検索結果</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-      <v-sheet v-for="site in campSiteInfoes" :key="site.id">
-        <v-row>
-          <v-col>
-            <h4>{{ site.siteName }}</h4>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            {{ `〒${site.address.zipCode}` }}
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            {{
-              `${site.address.pref} ${site.address.city} ${site.address.otherAddress}`
-            }}
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-divider></v-divider>
-        </v-row>
-      </v-sheet>
-    </v-card>
-  </v-dialog>
+  <div>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <v-sheet v-for="site in campSiteInfoes" :key="site.id" @click="toCapmSiteDetail(site.id)">
+      <v-divider></v-divider>
+      <v-row>
+        <v-col>
+          <h4>{{ site.siteName }}</h4>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          {{ `〒${site.address.zipCode}` }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          {{
+            `${site.address.pref} ${site.address.city} ${site.address.otherAddress}`
+          }}
+        </v-col>
+      </v-row>
+      <v-row>
+      </v-row>
+    </v-sheet>
+    <v-divider></v-divider>
+  </div>
 </template>
 
 <script lang="ts">
@@ -50,5 +39,9 @@ export default class Index extends Vue {
 
   @Prop()
   campSiteInfoes!: CampSiteInfo[]
+
+  toCapmSiteDetail(id: string) {
+    return this.$router.push(`/sites/${id}`)
+  }
 }
 </script>
