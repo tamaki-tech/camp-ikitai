@@ -5,4 +5,8 @@ export default class CampSiteServiceImpl implements CampSiteService {
   async search(): Promise<CampSiteInfo[]> {
     return await Promise.resolve([new CampSiteInfo()])
   }
+
+  async searchById(): Promise<CampSiteInfo> {
+    return await Promise.resolve(new CampSiteInfo())
+  }
 }
