@@ -7,7 +7,24 @@
             "pref": "埼玉県",
             "city": "飯能市",
             "otherAddress": "久下４７２"
-        }
+        },
+        "facilities": [
+            {
+                "id": 1,
+                "facilityName": "売店",
+                "isExist": "×"
+            },
+            {
+                "id": 2,
+                "facilityName": "電源",
+                "isExist": "×"
+            },
+            {
+                "id": 3,
+                "facilityName": "シャワー",
+                "isExist": "×"
+            }
+        ]
     },
     {
         "id": 2,
@@ -17,7 +34,24 @@
             "pref": "埼玉県",
             "city": "大里郡寄居町",
             "otherAddress": "保田原３２１"
-        }
+        },
+        "facilities": [
+            {
+                "id": 1,
+                "facilityName": "売店",
+                "isExist": "×"
+            },
+            {
+                "id": 2,
+                "facilityName": "電源",
+                "isExist": "×"
+            },
+            {
+                "id": 3,
+                "facilityName": "シャワー",
+                "isExist": "×"
+            }
+        ]
     },
     {
         "id": 3,
@@ -27,6 +61,23 @@
             "pref": "埼玉県",
             "city": "比企郡嵐山町",
             "otherAddress": "鎌形2604"
-        }
+        },
+        "facilities": [
+            {
+                "id": 1,
+                "facilityName": "売店",
+                "isExist": "×"
+            },
+            {
+                "id": 2,
+                "facilityName": "電源",
+                "isExist": "×"
+            },
+            {
+                "id": 3,
+                "facilityName": "シャワー",
+                "isExist": "×"
+            }
+        ]
     }
 ]

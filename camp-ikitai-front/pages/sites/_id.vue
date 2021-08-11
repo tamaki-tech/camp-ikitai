@@ -1,12 +1,17 @@
 <template>
   <div>
     <h2>{{ campSiteInfo.siteName }}</h2>
-    <p>{{ `〒${campSiteInfo.address.zipCode}` }}</p>
-    <p>
-      {{
-        `${campSiteInfo.address.pref} ${campSiteInfo.address.city} ${campSiteInfo.address.otherAddress}`
-      }}
-    </p>
+    <h5>
+      {{ `${campSiteInfo.address.pref} ${campSiteInfo.address.city}` }}
+    </h5>
+    <br />
+    <div v-for="facility in campSiteInfo.facilities" :key="facility.id">
+      <v-row>
+        <v-col>{{ facility.facilityName }}</v-col>
+        <v-col>{{ facility.isExist }}</v-col>
+      </v-row>
+      <v-divider></v-divider>
+    </div>
   </div>
 </template>
 
