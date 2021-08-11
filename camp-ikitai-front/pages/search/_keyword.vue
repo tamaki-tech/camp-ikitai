@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p><h3>検索結果</h3></p>
     <p><h4>キーワード: {{ $route.query.keyword }}</h4></p>
+    <p>検索結果: {{ dispSiteList.length }}件</p>
     <camp-site-list-dialog :camp-site-infoes="dispSiteList" />
   </div>
 </template>
