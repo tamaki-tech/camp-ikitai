@@ -1,6 +1,6 @@
 <template>
   <div>
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
     </v-toolbar>
     <v-sheet v-for="site in campSiteInfoes" :key="site.id" @click="()=>{$router.push(`/sites/${site.id}`)}">
       <v-divider></v-divider>
@@ -12,7 +12,9 @@
           <p>
             <strong>{{ site.siteName }}</strong>
           </p>
-          <p>{{ `${site.address.pref} ${site.address.city} ${site.address.otherAddress}` }}</p>
+          <p>
+            {{ `${site.address.pref} ${site.address.city} ${site.address.otherAddress}` }}
+          </p>
         </v-col>
       </v-row>
     </v-sheet>

@@ -12,10 +12,6 @@
         <v-btn color="primary">現在地から探す</v-btn>
       </v-col>
     </v-row>
-    <camp-site-list-dialog
-      :dialog.sync="dialogShowFlag"
-      :camp-site-infoes="dispSiteList"
-    />
   </div>
 </template>
 
