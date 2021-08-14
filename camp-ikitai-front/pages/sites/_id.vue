@@ -20,6 +20,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
+
 @Component
 export default class SiteDetail extends Vue {
   campSiteService!: CampSiteService
