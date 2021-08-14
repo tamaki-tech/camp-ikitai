@@ -7,7 +7,7 @@ export default class CampSiteServiceStub implements CampSiteService {
         return ((await axios.get('/data/content/CampSiteSearch.json')).data) as CampSiteInfo[]
     }
 
-    async searchById(): Promise<CampSiteInfo> {
-        return ((await axios.get('/data/content/CampSiteSearchById.json')).data) as CampSiteInfo
+    async searchById(id: string): Promise<CampSiteInfo> {
+        return ((await axios.get(`/data/content/CampSiteInfo/${id}.json`)).data) as CampSiteInfo
     }
 }

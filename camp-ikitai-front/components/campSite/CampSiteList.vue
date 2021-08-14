@@ -23,22 +23,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, PropSync, Prop } from 'nuxt-property-decorator'
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 
 @Component
 export default class Index extends Vue {
-  @PropSync('dialog', { type: Boolean, default: false })
-  dialogShowFlag!: boolean
-
   @Prop()
   campSiteInfoes!: CampSiteInfo[]
 }
 </script>
-
-<style scoped>
-.SideBySide p {
-  display: inline-block;
-  vertical-align: top; /*縦方向の揃え位置を指定*/
-}
-</style>
