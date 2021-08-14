@@ -2,26 +2,18 @@
   <div>
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-sheet v-for="site in campSiteInfoes" :key="site.id" @click="toCapmSiteDetail(site.id)">
+    <v-sheet v-for="site in campSiteInfoes" :key="site.id" @click="()=>{$router.push(`/sites/${site.id}`)}">
       <v-divider></v-divider>
       <v-row>
-        <v-col>
-          <h4>{{ site.siteName }}</h4>
+        <v-col cols="4" align-self="center">
+          <v-img contain max-height="100" max-width="100" :src="site.imagePath" />
         </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          {{ `〒${site.address.zipCode}` }}
+        <v-col cols="8">
+          <p>
+            <strong>{{ site.siteName }}</strong>
+          </p>
+          <p>{{ `${site.address.pref} ${site.address.city} ${site.address.otherAddress}` }}</p>
         </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          {{
-            `${site.address.pref} ${site.address.city} ${site.address.otherAddress}`
-          }}
-        </v-col>
-      </v-row>
-      <v-row>
       </v-row>
     </v-sheet>
     <v-divider></v-divider>
@@ -30,7 +22,7 @@
 
 <script lang="ts">
 import { Vue, Component, PropSync, Prop } from 'nuxt-property-decorator'
-import CampSiteInfo from '~/domains/campSite/CampSiteInfo'
+import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 
 @Component
 export default class Index extends Vue {
@@ -39,9 +31,12 @@ export default class Index extends Vue {
 
   @Prop()
   campSiteInfoes!: CampSiteInfo[]
-
-  toCapmSiteDetail(id: string) {
-    return this.$router.push(`/sites/${id}`)
-  }
 }
 </script>
+
+<style scoped>
+.SideBySide p {
+  display: inline-block;
+  vertical-align: top; /*縦方向の揃え位置を指定*/
+}
+</style>
