@@ -58,6 +58,9 @@ export default {
     theme: {
       dark: false,
       themes: {
+        light: {
+          link: "#1976d2"
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
