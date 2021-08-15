@@ -8,8 +8,12 @@
         <v-row justify="center">
           <v-col>
             <v-btn x-small>キーワードから探す</v-btn>
-            <v-btn color="primary" x-small>都道府県から探す</v-btn>
-            <v-btn color="primary" x-small>特徴から探す</v-btn>
+            <v-btn color="primary" x-small @click="showPrefSearchDialog">
+              都道府県から探す
+            </v-btn>
+            <v-btn color="primary" x-small @click="showFeatureSearchDialog">
+              特徴から探す
+            </v-btn>
           </v-col>
         </v-row>
         <v-text-field v-model="searchWords" :label="message" type="text">
@@ -20,6 +24,8 @@
         <v-btn color="primary">現在地から探す</v-btn>
       </v-col>
     </v-row>
+    <search-pref-dialog :dialog.sync="prefSearchDialogShowFlg" />
+    <search-feature-dialog :dialog.sync="featureSearchDialogShowFlg" />
   </div>
 </template>
 
@@ -36,6 +42,8 @@ export default class Index extends Vue {
   message = 'キャンプ場名・エリア'
   searchWords = ''
   dispSiteList: CampSiteInfo[] = []
+  prefSearchDialogShowFlg = false
+  featureSearchDialogShowFlg = false
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
@@ -43,6 +51,14 @@ export default class Index extends Vue {
 
   toSearchResultPage() {
     return this.$router.push(`/search?keyword=${this.searchWords}`)
+  }
+
+  showPrefSearchDialog() {
+    this.prefSearchDialogShowFlg = true
+  }
+
+  showFeatureSearchDialog() {
+    this.featureSearchDialogShowFlg = true
   }
 }
 </script>
