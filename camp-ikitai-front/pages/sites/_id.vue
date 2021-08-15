@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h2>{{ campSiteInfo.siteName }}</h2>
-    <h5>{{ `${campSiteInfo.address.pref} ${campSiteInfo.address.city}` }}</h5>
-    <br />
+    <p>
+      <h2>{{ campSiteInfo.siteName }}</h2>
+      <h5>{{ `${campSiteInfo.address.pref} ${campSiteInfo.address.city}` }}</h5>
+    </p>
     <h4>■設備・ルール</h4>
     <facility-exist-part :facilities="campSiteInfo.facilities" />
     <h4>■施設補足情報</h4>
-    {{ campSiteInfo.addition }}
+    <p>{{ campSiteInfo.addition }}</p>
     <h3>基本情報</h3>
     <camp-site-detail :camp-site-info="campSiteInfo" />
   </div>
