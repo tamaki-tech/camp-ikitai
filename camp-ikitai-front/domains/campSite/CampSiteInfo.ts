@@ -11,6 +11,8 @@ export default class CampSiteInfo {
     public access = '',
     public phoneNumber = '',
     public url = '',
+    public lat = 0.0,
+    public lon = 0.0,
     public price = '',
     public address = Address,
     public facilities: Facility[] = []
