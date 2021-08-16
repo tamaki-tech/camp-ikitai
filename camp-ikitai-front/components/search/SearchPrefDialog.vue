@@ -13,11 +13,7 @@
           </v-btn>
           <v-toolbar-title>都道府県から探す</v-toolbar-title>
         </v-toolbar>
-        <v-list three-line subheader>
-          <v-list-item>
-            <v-list-item-content> test </v-list-item-content>
-          </v-list-item>
-        </v-list>
+        <search-pref-check-box :selected.sync="selected" />
       </v-card>
     </v-dialog>
   </v-row>
@@ -30,6 +26,8 @@ import { Vue, Component, PropSync } from 'nuxt-property-decorator'
 export default class SearchPrefDialog extends Vue {
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
+
+  selected: string[] = []
 
   closeDialog() {
     this.showDialog = false
