@@ -13,7 +13,10 @@
           </v-btn>
           <v-toolbar-title>都道府県から探す</v-toolbar-title>
         </v-toolbar>
-        <search-pref-check-box :selected.sync="selected" />
+        <br />
+        <v-card-text>
+          <search-pref-check-box :selected.sync="selected" />
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-row>
