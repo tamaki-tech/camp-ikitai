@@ -1,6 +1,6 @@
 <template>
-   <div>
-    <h4>関東</h4>
+  <div>
+    <h3>関東</h3>
     <v-checkbox
       v-for="pref in prefKanto"
       :key="pref.name"
@@ -8,6 +8,7 @@
       :label="pref.name"
       :value="pref.value"
     />
+    <v-btn block color="primary" @click="showList"> このエリアで絞り込む </v-btn>
   </div>
 </template>
 
@@ -27,5 +28,9 @@ export default class SearchPrefDialogHoge extends Vue {
     { name: '群馬', value: 'gunnma' },
     { name: '栃木', value: 'tochigi' },
   ]
+
+  showList() {
+    console.log(this.selectedPrefList)
+  }
 }
 </script>
