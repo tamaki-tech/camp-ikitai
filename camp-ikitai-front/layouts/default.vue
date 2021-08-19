@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <v-app-bar fixed app>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+     CAMP△IKITAI
     </v-app-bar>
     <v-main>
       <v-container>
