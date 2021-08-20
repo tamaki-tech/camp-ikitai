@@ -26,9 +26,8 @@ export default class Index extends Vue {
   }
 
   async search() {
-    this.dispSiteList = await this.campSiteService.search(
-      this.$route.query.keyword as string
-    )
+    // TODO queryそのまま渡すでバック側に不都合ないか？
+    this.dispSiteList = await this.campSiteService.search(this.$route.query)
   }
 }
 </script>
