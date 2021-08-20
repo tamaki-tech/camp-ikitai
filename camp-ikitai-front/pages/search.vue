@@ -15,7 +15,7 @@ import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
 
 @Component
-export default class SearchResult extends Vue {
+export default class Index extends Vue {
   campSiteService!: CampSiteService
 
   dispSiteList: CampSiteInfo[] = []

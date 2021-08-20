@@ -21,7 +21,30 @@ export const SearchItems = {
                 { name: '栃木', value: 'tochigi' },
             ]
 
-        }
+        },
 
+    ],
+    prefHokuriku: [
+        {
+            id: 1,
+            value: [
+                { name: '新潟', value: 'niigata' },
+                { name: '富山', value: 'toyama' },
+            ]
+        },
+        {
+            id: 2,
+            value: [
+                { name: '石川', value: 'ishikawa' },
+                { name: '福井', value: 'fukui' },
+            ]
+        },
+        {
+            id: 3,
+            value: [
+                { name: '山梨', value: 'yamanashi' },
+                { name: '長野', value: 'nagano' },
+            ]
+        },
     ]
 }
