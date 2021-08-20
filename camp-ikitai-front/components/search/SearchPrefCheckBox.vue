@@ -32,7 +32,7 @@
         </v-col>
       </v-row>
     </div>
-    <v-btn block color="primary" @click="showList">
+    <v-btn block color="primary" @click="toSearchResult">
       このエリアで絞り込む
     </v-btn>
   </div>
@@ -55,8 +55,16 @@ export default class SearchPrefDialogHoge extends Vue {
     this.prefHokuriku = SearchItems.prefHokuriku
   }
 
-  showList() {
-    console.log(this.selectedPrefList)
+  toSearchResult() {
+    return this.$router.push(`/search?${this.createGetParam()}`)
+  }
+
+  private createGetParam(): string{
+    let res = ''
+    this.selectedPrefList.forEach(pref => {
+      res += res === '' ? `pref=${pref}` : `&pref=${pref}`
+    })
+    return res
   }
 }
 </script>
