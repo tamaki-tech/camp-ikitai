@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-app-bar fixed app>
-     CAMP△IKITAI
+      <v-spacer />
+      <v-toolbar-title> CAMP△IKITAI </v-toolbar-title>
+      <v-spacer />
     </v-app-bar>
     <v-main>
       <v-container>

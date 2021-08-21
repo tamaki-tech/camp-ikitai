@@ -32,7 +32,9 @@
       </v-row>
       <v-row no-gutters>
         <v-col>
-          <v-btn v-model="selected" block color="primary"><v-icon>mdi-magnify</v-icon>検索</v-btn>
+          <v-btn v-model="selected" block color="primary"
+            ><v-icon>mdi-magnify</v-icon>検索</v-btn
+          >
         </v-col>
       </v-row>
       <br />
@@ -63,8 +65,15 @@ export default class Index extends Vue {
   prefSearchDialogShowFlg = false
   featureSearchDialogShowFlg = false
 
-  items = ['イキタイ多い順']
-  selected = this.items[0]
+  items = [
+    '現在地から近い順',
+    'イキタイ多い順',
+    'クチコミ 多い順',
+    '料金 高い順',
+    '料金 低い順',
+  ]
+
+  selected = this.items[1]
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
