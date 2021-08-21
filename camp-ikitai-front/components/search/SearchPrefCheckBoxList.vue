@@ -1,37 +1,15 @@
 <template>
   <div>
-    <!-- TODO Component切り出す -->
-    <div>
-      <h3>関東</h3>
-      <v-row v-for="prefPair in prefKanto" :key="prefPair.id" no-gutters dense>
-        <v-col v-for="pref in prefPair.value" :key="pref.name">
-          <v-checkbox
-            v-model="selectedPrefList"
-            :label="pref.name"
-            :value="pref.value"
-          />
-        </v-col>
-      </v-row>
-    </div>
-    <v-divider></v-divider>
-    <br />
-    <div>
-      <h3>北陸・甲信越</h3>
-      <v-row
-        v-for="prefPair in prefHokuriku"
-        :key="prefPair.id"
-        no-gutters
-        dense
-      >
-        <v-col v-for="pref in prefPair.value" :key="pref.name">
-          <v-checkbox
-            v-model="selectedPrefList"
-            :label="pref.name"
-            :value="pref.value"
-          />
-        </v-col>
-      </v-row>
-    </div>
+    <search-check-box
+      :selected.sync="selectedPrefList"
+      :item-list="prefKanto"
+      label="関東"
+    />
+    <search-check-box
+      :selected.sync="selectedPrefList"
+      :item-list="prefHokuriku"
+      label="北陸・甲信越"
+    />
     <v-btn block color="primary" @click="toSearchResult">
       このエリアで絞り込む
     </v-btn>
@@ -58,6 +36,7 @@ export default class SearchPrefDialogHoge extends Vue {
     this.prefHokuriku = SearchItems.prefHokuriku
   }
 
+  // TODO親Component側のメソッドを叩くようにリファクタする
   toSearchResult() {
     this.showDialog = false
     return this.$router.push(`/search?${this.createGetParam()}`)
