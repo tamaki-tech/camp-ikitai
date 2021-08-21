@@ -14,7 +14,7 @@
       </v-row>
     </div>
     <v-divider></v-divider>
-    <br>
+    <br />
     <div>
       <h3>北陸・甲信越</h3>
       <v-row
@@ -47,6 +47,9 @@ export default class SearchPrefDialogHoge extends Vue {
   @PropSync('selected', { type: Array, default: null })
   selectedPrefList!: string[]
 
+  @PropSync('dialog', { type: Boolean, default: false })
+  showDialog!: boolean
+
   prefKanto: any = []
   prefHokuriku: any = []
 
@@ -56,12 +59,13 @@ export default class SearchPrefDialogHoge extends Vue {
   }
 
   toSearchResult() {
+    this.showDialog = false
     return this.$router.push(`/search?${this.createGetParam()}`)
   }
 
-  private createGetParam(): string{
+  private createGetParam(): string {
     let res = ''
-    this.selectedPrefList.forEach(pref => {
+    this.selectedPrefList.forEach((pref) => {
       res += res === '' ? `pref=${pref}` : `&pref=${pref}`
     })
     return res

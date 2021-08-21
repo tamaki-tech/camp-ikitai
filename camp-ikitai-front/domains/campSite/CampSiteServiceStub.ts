@@ -4,8 +4,8 @@ import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 type Dictionary<T> = { [key: string]: T }
 
 export default class CampSiteServiceStub implements CampSiteService {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async search(query: Dictionary<string | (string | null)[]>): Promise<CampSiteInfo[]> {
-        console.log(query)
         return ((await axios.get('/data/content/CampSiteSearch.json')).data) as CampSiteInfo[]
     }
 
