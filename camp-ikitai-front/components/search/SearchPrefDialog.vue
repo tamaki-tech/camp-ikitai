@@ -15,7 +15,10 @@
         </v-toolbar>
         <br />
         <v-card-text>
-          <search-pref-check-box :selected.sync="selected" />
+          <search-pref-check-box
+            :selected.sync="selected"
+            :dialog.sync="showDialog"
+          />
         </v-card-text>
       </v-card>
     </v-dialog>
