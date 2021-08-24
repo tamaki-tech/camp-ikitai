@@ -1,11 +1,11 @@
 {
     "id": 2,
     "siteName": "かわせみ河原キャンプ場",
-    "addition": "木々に囲まれた丘の川岸の遊歩道。レンタルしたグリルでのバーベキュー、キャンプ、遊泳が人気。 現在は臨時休業中。",
+    "addition": "意外と知られていませんが、最寄り駅から徒歩やバスで気軽に行けるキャンプ場です。 現在は臨時休業中。",
     "type": "キャンプ場",
-    "access": "西武池袋線 飯能駅 徒歩10分",
+    "access": "東武東上線 鉢形駅 徒歩 14分",
     "phoneNumber": null,
-    "url": "http://okumusashi.life.coocan.jp/kawara.html",
+    "url": "http://yorii-kanko.jp/kawasemi.html",
     "price": null,
     "address": {
         "zipCode": "369-1221",
@@ -15,8 +15,8 @@
     },
     "imagePath": "/data/img/campSiteInfo/2/top.jpeg",
     "coordinate": [
-        38.856355,
-        141.615593
+        36.11785213889304,
+        139.2169909425512
     ],
     "facilities": [
         {
