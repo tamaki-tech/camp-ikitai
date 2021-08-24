@@ -15,6 +15,7 @@ export default class CampSiteInfo {
     public lon = 0.0,
     public price = '',
     public address = Address,
-    public facilities: Facility[] = []
+    public facilities: Facility[] = [],
+    public coordinate: [] = []
   ) { }
 }
