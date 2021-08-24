@@ -10,6 +10,11 @@
     <p>{{ campSiteInfo.addition }}</p>
     <h3>基本情報</h3>
     <camp-site-detail :camp-site-info="campSiteInfo" />
+    <br>
+    <div class="map">
+      <site-map :center="center" />
+    </div>
+    <br>
   </div>
 </template>
 
@@ -22,14 +27,23 @@ import ServiceFactory from '@/domains/ServiceFactory'
 @Component
 export default class SiteDetail extends Vue {
   campSiteService!: CampSiteService
-
   campSiteInfo: CampSiteInfo = new CampSiteInfo()
+  center = [0, 0]
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
     this.campSiteInfo = await this.campSiteService.searchById(
       this.$route.params.id
     )
+    this.center = this.campSiteInfo.coordinate
   }
 }
 </script>
+
+<style scoped>
+.map {
+  z-index: 0;
+  height: 300px;
+  width: 100%;
+}
+</style>

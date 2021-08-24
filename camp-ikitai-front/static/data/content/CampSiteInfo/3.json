@@ -14,6 +14,10 @@
         "otherAddress": "鎌形2604"
     },
     "imagePath": "/data/img/campSiteInfo/3/top.jpeg",
+    "coordinate": [
+        38.856355,
+        141.615593
+    ],
     "facilities": [
         {
             "id": 1,

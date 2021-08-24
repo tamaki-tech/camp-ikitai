@@ -14,6 +14,10 @@
         "otherAddress": "久下４７２"
     },
     "imagePath": "/data/img/campSiteInfo/1/top.jpeg",
+    "coordinate": [
+        35.855122,
+        139.312329
+    ],
     "facilities": [
         {
             "id": 1,
