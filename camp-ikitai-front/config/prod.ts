@@ -1,4 +1,4 @@
 module.exports = {
-  BASE_URL: '/',
-  STUB: false,
+  BASE_URL: '/Nuxt-TypeScript-Boilerplate/',
+  STUB: true,
 }
