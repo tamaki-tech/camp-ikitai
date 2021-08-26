@@ -17,10 +17,10 @@ jobs:
           cd camp-ikitai-front
           ls -l
           yarn
-          yarn generate
-
+          yarn run generate
       - name: Deploy 🚀
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: camp-ikitai-front/dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: camp-ikitai-front/dist
