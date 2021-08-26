@@ -14,7 +14,7 @@
         "otherAddress": "鎌形2604"
     },
     "ikitai": 12,
-    "imagePath": "/data/img/campSiteInfo/3/top.jpeg",
+    "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/3/top.jpeg",
     "coordinate": [
         36.031107918470326,
         139.30292760235608

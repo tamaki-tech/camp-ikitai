@@ -16,7 +16,7 @@
         },
         "ikitai": 12,
         "reviewCount": 5,
-        "imagePath": "/data/img/campSiteInfo/1/top.jpeg",
+        "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/1/top.jpeg",
         "coordinate": [
             35.855122,
             139.312329
@@ -39,7 +39,7 @@
         },
         "ikitai": 10,
         "reviewCount": 2,
-        "imagePath": "/data/img/campSiteInfo/2/top.jpeg",
+        "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg",
         "coordinate": [
             36.11785213889304,
             139.2169909425512
@@ -62,7 +62,7 @@
         },
         "ikitai": 3,
         "reviewCount": 24,
-        "imagePath": "/data/img/campSiteInfo/3/top.jpeg",
+        "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/3/top.jpeg",
         "coordinate": [
             36.031107918470326,
             139.30292760235608
