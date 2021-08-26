@@ -1,4 +1,4 @@
 module.exports = {
-  BASE_URL: '/Nuxt-TypeScript-Boilerplate/',
+  BASE_URL: '/camp-ikitai/',
   STUB: true,
 }
