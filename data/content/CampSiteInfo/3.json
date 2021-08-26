@@ -1,0 +1,39 @@
+{
+    "id": 3,
+    "siteName": "月川荘キャンプ場",
+    "addition": "清らかな渓谷を望む月川荘キャンプ場は、休日には釣り客や水遊びのファミリーから支持を得ています。アクセスも良好なのでデイキャンパーにも人気。 都心から少し足を伸ばして、普段では味わえない自然の空気に触れてみませんか。",
+    "type": "キャンプ場",
+    "access": "東武東上線 武蔵嵐山駅 徒歩 59分",
+    "phoneNumber": null,
+    "url": "https://tukigawasou.jimdofree.com/",
+    "price": null,
+    "address": {
+        "zipCode": "355-0225",
+        "pref": "埼玉県",
+        "city": "比企郡嵐山町",
+        "otherAddress": "鎌形2604"
+    },
+    "ikitai": 12,
+    "imagePath": "/data/img/campSiteInfo/3/top.jpeg",
+    "coordinate": [
+        36.031107918470326,
+        139.30292760235608
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "facilityName": "売店",
+            "isExist": "×"
+        },
+        {
+            "id": 2,
+            "facilityName": "電源",
+            "isExist": "×"
+        },
+        {
+            "id": 3,
+            "facilityName": "シャワー",
+            "isExist": "×"
+        }
+    ]
+}
