@@ -7,6 +7,7 @@ const env = require(`./config/${environment}.ts`)
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+  mode: 'spa',
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -18,6 +19,7 @@ export default {
   head: {
     titleTemplate: '%s - camp-ikitai-front',
     title: 'camp-ikitai-front',
+    script: [{ src: '/js/404-redirect-ghpages.js' }],
     htmlAttrs: {
       lang: 'ja'
     },
