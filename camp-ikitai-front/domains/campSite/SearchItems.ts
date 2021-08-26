@@ -22,6 +22,13 @@ export const SearchItems = {
             ]
 
         },
+        {
+            id: 4,
+            value: [
+                { name: '千葉', value: 'chiba' },
+            ]
+
+        },
 
     ],
     prefHokuriku: [
