@@ -15,10 +15,6 @@ export default {
     base: env.BASE_URL  
   },
 
-  generate: {
-    dir: 'docs'
-  },
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - camp-ikitai-front',
