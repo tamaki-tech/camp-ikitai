@@ -17,11 +17,11 @@ jobs:
           cd camp-ikitai-front
           ls -l
           yarn
-          yarn build
+          yarn run generate
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: camp-ikitai-front/.nuxt/dist
+          folder: camp-ikitai-front/dist
