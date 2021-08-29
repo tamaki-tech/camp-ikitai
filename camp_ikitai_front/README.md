@@ -1,4 +1,4 @@
-# camp-ikitai-front
+# camp_ikitai_front
 
 ## Build Setup
 
