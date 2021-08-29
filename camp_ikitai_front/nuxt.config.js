@@ -17,9 +17,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - camp-ikitai-front',
-    title: 'camp-ikitai-front',
-    script: [{ src: '/js/404-redirect-ghpages.js' }],
+    titleTemplate: '%s - camp_ikitai-front',
+    title: 'camp_ikitai-front',
     htmlAttrs: {
       lang: 'ja'
     },
