@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  postgresql:
+    image: postgres:12.5
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
