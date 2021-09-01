@@ -13,11 +13,13 @@
           </v-btn>
           <v-toolbar-title>特徴から探す</v-toolbar-title>
         </v-toolbar>
-        <v-list three-line subheader>
-          <v-list-item>
-            <v-list-item-content> test </v-list-item-content>
-          </v-list-item>
-        </v-list>
+        <br />
+        <v-card-text>
+          <search-feature-check-box-list
+            :selected.sync="selected"
+            :dialog.sync="showDialog"
+          />
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-row>
@@ -30,6 +32,8 @@ import { Vue, Component, PropSync } from 'nuxt-property-decorator'
 export default class SearchFeatureDialog extends Vue {
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
+
+  selected: string[] = []
 
   closeDialog() {
     this.showDialog = false

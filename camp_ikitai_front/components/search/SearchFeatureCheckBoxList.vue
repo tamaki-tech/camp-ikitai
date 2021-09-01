@@ -1,40 +1,40 @@
 <template>
   <div>
     <search-check-box
-      :selected.sync="selectedPrefList"
-      :item-list="prefKanto"
-      label="関東"
+      :selected.sync="selectedFeatureList"
+      :item-list="installations"
+      label="施設タイプ"
     />
     <search-check-box
-      :selected.sync="selectedPrefList"
-      :item-list="prefHokuriku"
-      label="北陸・甲信越"
+      :selected.sync="selectedFeatureList"
+      :item-list="facilities"
+      label="場内設備"
     />
     <v-btn block color="primary" @click="toSearchResult">
-      このエリアで絞り込む
+      この条件で絞り込む
     </v-btn>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, PropSync } from 'nuxt-property-decorator'
-import { Prefectures } from '@/domains/campSite/SearchItems'
+import { Features } from '@/domains/campSite/SearchItems'
 
 @Component
-export default class SearchPreCheckBoxList extends Vue {
+export default class SearchFeatureCheckBoxList extends Vue {
   @PropSync('selected', { type: Array, default: null })
-  selectedPrefList!: string[]
+  selectedFeatureList!: string[]
 
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
 
-  prefKanto: any = []
-  prefHokuriku: any = []
+  installations: any = []
+  facilities: any = []
 
   fetch() {
     // TODO リファクタ
-    this.prefKanto = Prefectures.kanto
-    this.prefHokuriku = Prefectures.hokuriku
+    this.installations = Features.installations
+    this.facilities = Features.facilities
   }
 
   // TODO親Component側のメソッドを叩くようにリファクタする
@@ -45,8 +45,8 @@ export default class SearchPreCheckBoxList extends Vue {
 
   private createGetParam(): string {
     let res = ''
-    this.selectedPrefList.forEach((pref) => {
-      res += res === '' ? `pref=${pref}` : `&pref=${pref}`
+    this.selectedFeatureList.forEach((feature) => {
+      res += res === '' ? `feature=${feature}` : `&feature=${feature}`
     })
     return res
   }
