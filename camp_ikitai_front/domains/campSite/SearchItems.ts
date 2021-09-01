@@ -1,5 +1,5 @@
-export const SearchItems = {
-    prefKanto: [
+export const Prefectures = {
+    kanto: [
         {
             id: 1,
             value: [
@@ -31,7 +31,7 @@ export const SearchItems = {
         },
 
     ],
-    prefHokuriku: [
+    hokuriku: [
         {
             id: 1,
             value: [
@@ -51,6 +51,41 @@ export const SearchItems = {
             value: [
                 { name: '山梨', value: 'yamanashi' },
                 { name: '長野', value: 'nagano' },
+            ]
+        },
+    ]
+}
+
+export const Features = {
+    installations: [
+        {
+            id: 1,
+            value: [
+                { name: 'オートキャンプ場', value: 'autoCampSite' },
+                { name: 'キャンプ場', value: 'campSite' },
+            ]
+        },
+        {
+            id: 2,
+            value: [
+                { name: 'ロッジ', value: 'lodge' },
+                { name: 'バンガロー', value: 'bungalow' },
+            ]
+        },
+    ],
+    facilities: [
+        {
+            id: 1,
+            value: [
+                { name: 'お風呂', value: 'bath' },
+                { name: 'シャワー', value: 'shower' },
+            ]
+        },
+        {
+            id: 2,
+            value: [
+                { name: 'ゴミ捨て場', value: 'dumpSite' },
+                { name: 'ランドリー', value: 'laundry' },
             ]
         },
     ]
