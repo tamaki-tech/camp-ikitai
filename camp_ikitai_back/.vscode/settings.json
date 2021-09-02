@@ -1,6 +1,10 @@
 {
-    "python.analysis.extraPaths": [
-        "./"
+    "python.autoComplete.extraPaths": [
+        "/Users/nmatsumoto/workspace/camp-ikitai/camp_ikitai_back/venv/lib/python3.9/site-packages",
+        "/Users/nmatsumoto/workspace/camp-ikitai/camp_ikitai_back/venv/lib/python3.9/site-packages",
     ],
-    "python.formatting.provider": "black"
+    "python.analysis.extraPaths": [
+        "/Users/nmatsumoto/workspace/camp-ikitai/camp_ikitai_back/venv/lib/python3.9/site-packages",
+        "/Users/nmatsumoto/workspace/camp-ikitai/camp_ikitai_back/venv/lib/python3.9/site-packages"
+    ],
 }
