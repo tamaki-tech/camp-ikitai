@@ -7,11 +7,12 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
     def handle(self, *args, **options):
         # start docker
-        # TODO すでにコンテナ起動してたら落として再作成する？
+        subprocess.call("docker-compose down", shell=True)
         subprocess.call("docker-compose up -d", shell=True)
 
-        # run migrate
-        subprocess.call("python manage.py makemigrations", shell=True)
-        subprocess.call("python manage.py migrate", shell=True)
+        # sleep
+        subprocess.call("sleep 3", shell=True)
 
-        # TODO 初期データ投入
+        # add records
+        subprocess.call("python manage.py makemigration", shell=True)
+        subprocess.call("python manage.py migrate", shell=True)
