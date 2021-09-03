@@ -1,4 +1,4 @@
-@startuml
+@startuml data_model
 
 entity site_type {
     id
