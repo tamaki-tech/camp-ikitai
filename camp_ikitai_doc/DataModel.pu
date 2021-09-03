@@ -1,18 +1,9 @@
-@startuml
+@startuml data_model
 
 entity site_type {
     id
     --
     name
-}
-
-entity address {
-    id
-    --
-    zip_code
-    pref_name
-    city_name
-    other_address
 }
 
 entity camp_site {
@@ -25,12 +16,27 @@ entity camp_site {
     phone_number
     url
     price
-    address_id <<FK>>
     image_path
-    coordinate
 }
 camp_site }|.. site_type
-camp_site }|.. address
+
+entity address {
+    address_id <<FK>>
+    --
+    zip_code
+    pref_name
+    city_name
+    other_address
+}
+address||--||camp_site
+
+entity coordinate {
+    camp_site_id <<FK>>
+    --
+    let
+    lon
+}
+coordinate||--||camp_site
 
 entity facility {
     id
@@ -53,6 +59,7 @@ entity review {
     --
     camp_site_id <<FK>>
     user_id <<FK>>
+    point
     comment
 }
 review }|.. camp_site
