@@ -1,0 +1,68 @@
+@startuml
+
+entity site_type {
+    id
+    --
+    name
+}
+
+entity address {
+    id
+    --
+    zip_code
+    pref_name
+    city_name
+    other_address
+}
+
+entity camp_site {
+    id
+    --
+    site_type_id <<FK>>
+    site_name
+    addition
+    access
+    phone_number
+    url
+    price
+    address_id <<FK>>
+    image_path
+    coordinate
+}
+camp_site }|.. site_type
+camp_site }|.. address
+
+entity facility {
+    id
+    --
+    camp_site_id <<FK>>
+    name
+    is_exist
+}
+facility }|.. camp_site
+
+entity user {
+    id
+    --
+    name
+    mail_address
+}
+
+entity review {
+    id
+    --
+    camp_site_id <<FK>>
+    user_id <<FK>>
+    comment
+}
+review }|.. camp_site
+review }|.. user
+
+entity ikitai {
+    user_id <<FK>>
+    camp_site_id <<FK>>
+}
+ikitai }|.. user
+ikitai }|.. camp_site
+
+@enduml

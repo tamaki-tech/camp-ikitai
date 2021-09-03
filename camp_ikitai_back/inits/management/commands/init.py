@@ -13,6 +13,6 @@ class Command(BaseCommand):
         # sleep
         subprocess.call("sleep 3", shell=True)
 
-        # add records
-        subprocess.call("python manage.py makemigration", shell=True)
+        # migrate
+        subprocess.call("python manage.py makemigrations", shell=True)
         subprocess.call("python manage.py migrate", shell=True)
