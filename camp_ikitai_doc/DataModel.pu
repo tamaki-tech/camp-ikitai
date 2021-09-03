@@ -53,6 +53,7 @@ entity review {
     --
     camp_site_id <<FK>>
     user_id <<FK>>
+    point
     comment
 }
 review }|.. camp_site
