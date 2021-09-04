@@ -18,12 +18,9 @@ class Command(BaseCommand):
         subprocess.call("python manage.py migrate", shell=True)
 
         # add records
-        subprocess.call("python manage.py loaddata site_type.json", shell=True)
-        subprocess.call("python manage.py loaddata user.json", shell=True)
-        subprocess.call("python manage.py loaddata camp_site.json", shell=True)
-        subprocess.call("python manage.py loaddata address.json", shell=True)
-        subprocess.call("python manage.py loaddata coordinate.json", shell=True)
-        subprocess.call("python manage.py loaddata facility.json", shell=True)
-        subprocess.call("python manage.py loaddata camp_site_facility_rel.json", shell=True)
-        subprocess.call("python manage.py loaddata ikitai.json", shell=True)
-        subprocess.call("python manage.py loaddata review.json", shell=True)
+        with open("inits/fixtures/tables.txt", "r") as f:
+            domains = f.read().splitlines()
+            for domain in domains:
+                subprocess.call(
+                    f'python manage.py loaddata {domain}.json', shell=True
+                )
