@@ -54,12 +54,23 @@ class Coordinate(models.Model):
 
 
 class Facility(models.Model):
-    camp_site = models.ForeignKey(CampSite, on_delete=models.PROTECT)
     name = models.CharField(blank=True, null=True, max_length=30)
-    is_exist = models.BooleanField(default=False)
 
     class Meta:
         db_table = "facility"
+
+
+class CampSiteFacilityRel(models.Model):
+    camp_site = models.ForeignKey(CampSite, on_delete=models.PROTECT)
+    facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
+    is_exists = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = "camp_site_facility_rel"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["camp_site", "facility"], name="camp_site_facility")
+        ]
 
 
 class Ikitai(models.Model):
@@ -78,7 +89,7 @@ class Review(models.Model):
     camp_site = models.ForeignKey(CampSite, on_delete=models.PROTECT)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     point = models.IntegerField(default=0)
-    Comment = models.TextField()
+    comment = models.TextField()
 
     class Meta:
         db_table = "review"

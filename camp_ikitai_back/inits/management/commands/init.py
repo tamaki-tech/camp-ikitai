@@ -23,3 +23,7 @@ class Command(BaseCommand):
         subprocess.call("python manage.py loaddata camp_site.json", shell=True)
         subprocess.call("python manage.py loaddata address.json", shell=True)
         subprocess.call("python manage.py loaddata coordinate.json", shell=True)
+        subprocess.call("python manage.py loaddata facility.json", shell=True)
+        subprocess.call("python manage.py loaddata camp_site_facility_rel.json", shell=True)
+        subprocess.call("python manage.py loaddata ikitai.json", shell=True)
+        subprocess.call("python manage.py loaddata review.json", shell=True)
