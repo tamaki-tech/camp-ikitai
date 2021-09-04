@@ -1,0 +1,18 @@
+[
+    {
+        "model": "camp_sites.User",
+        "pk": 1,
+        "fields": {
+            "name": "テストユーザ1",
+            "mail_address": "aaa@example.com"
+        }
+    },
+    {
+        "model": "camp_sites.User",
+        "pk": 2,
+        "fields": {
+            "name": "テストユーザ2",
+            "mail_address": "bbb@example.com"
+        }
+    }
+]

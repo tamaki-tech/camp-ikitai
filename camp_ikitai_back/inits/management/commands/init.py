@@ -16,3 +16,7 @@ class Command(BaseCommand):
         # migrate
         subprocess.call("python manage.py makemigrations", shell=True)
         subprocess.call("python manage.py migrate", shell=True)
+
+        # add records
+        subprocess.call("python manage.py loaddata site_type.json", shell=True)
+        subprocess.call("python manage.py loaddata user.json", shell=True)

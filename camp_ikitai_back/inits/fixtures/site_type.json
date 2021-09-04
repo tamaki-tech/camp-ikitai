@@ -1,0 +1,23 @@
+[
+    {
+        "model": "camp_sites.SiteType",
+        "pk": 1,
+        "fields": {
+            "name": "オートキャンプ場"
+        }
+    },
+    {
+        "model": "camp_sites.SiteType",
+        "pk": 2,
+        "fields": {
+            "name": "河原キャンプ場"
+        }
+    },
+    {
+        "model": "camp_sites.SiteType",
+        "pk": 3,
+        "fields": {
+            "name": "林間キャンプ場"
+        }
+    }
+]
