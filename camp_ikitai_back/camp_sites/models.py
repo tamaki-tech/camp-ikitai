@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class SiteType(models.Model):
     name = models.CharField(max_length=30)
 

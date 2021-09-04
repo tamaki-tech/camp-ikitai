@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'inits',
-    'campSites',
+    'camp_sites',
 ]
 
 MIDDLEWARE = [

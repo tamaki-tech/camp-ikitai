@@ -1,9 +1,6 @@
-
-
-
 from django.apps import AppConfig
 
 
-class CampsitesConfig(AppConfig):
+class CampSitesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'campSites'
+    name = 'camp_sites'
