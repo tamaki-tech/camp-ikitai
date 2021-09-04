@@ -1,0 +1,29 @@
+[
+    {
+        "model": "camp_sites.Coordinate",
+        "pk": 1,
+        "fields": {
+            "camp_site_id": 1,
+            "let": 35.855122,
+            "lon": 139.312329
+        }
+    },
+    {
+        "model": "camp_sites.Coordinate",
+        "pk": 2,
+        "fields": {
+            "camp_site_id": 2,
+            "let": 36.11785213889304,
+            "lon": 139.2169909425512
+        }
+    },
+    {
+        "model": "camp_sites.Coordinate",
+        "pk": 3,
+        "fields": {
+            "camp_site_id": 3,
+            "let": 36.031107918470326,
+            "lon": 139.30292760235608
+        }
+    }
+]

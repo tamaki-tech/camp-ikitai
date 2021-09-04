@@ -1,0 +1,35 @@
+[
+    {
+        "model": "camp_sites.Address",
+        "pk": 1,
+        "fields": {
+            "camp_site_id": 1,
+            "zip_code": "357-0064",
+            "pref_name": "埼玉県",
+            "city_name": "飯能市",
+            "other_address": "久下４７２"
+        }
+    },
+    {
+        "model": "camp_sites.Address",
+        "pk": 2,
+        "fields": {
+            "camp_site_id": 2,
+            "zip_code": "369-1221",
+            "pref_name": "埼玉県",
+            "city_name": "大里郡寄居町",
+            "other_address": "保田原３２１"
+        }
+    },
+    {
+        "model": "camp_sites.Address",
+        "pk": 3,
+        "fields": {
+            "camp_site_id": 3,
+            "zip_code": "355-0225",
+            "pref_name": "埼玉県",
+            "city_name": "比企郡嵐山町",
+            "other_address": "鎌形2604"
+        }
+    }
+]

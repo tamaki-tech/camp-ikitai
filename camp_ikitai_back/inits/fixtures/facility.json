@@ -1,0 +1,23 @@
+[
+    {
+        "model": "camp_sites.Facility",
+        "pk": 1,
+        "fields": {
+            "name": "売店"
+        }
+    },
+    {
+        "model": "camp_sites.Facility",
+        "pk": 2,
+        "fields": {
+            "name": "電源"
+        }
+    },
+    {
+        "model": "camp_sites.Facility",
+        "pk": 3,
+        "fields": {
+            "name": "シャワー"
+        }
+    }
+]

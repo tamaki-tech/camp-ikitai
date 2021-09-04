@@ -1,0 +1,32 @@
+[
+    {
+        "model": "camp_sites.Review",
+        "pk": 1,
+        "fields": {
+            "camp_site_id": 1,
+            "user_id": 1,
+            "point": 30,
+            "comment": "テストレビューコメント"
+        }
+    },
+    {
+        "model": "camp_sites.Review",
+        "pk": 2,
+        "fields": {
+            "camp_site_id": 2,
+            "user_id": 1,
+            "point": 30,
+            "comment": "テストレビューコメント"
+        }
+    },
+    {
+        "model": "camp_sites.Review",
+        "pk": 3,
+        "fields": {
+            "camp_site_id": 3,
+            "user_id": 2,
+            "point": 30,
+            "comment": "テストレビューコメント"
+        }
+    }
+]

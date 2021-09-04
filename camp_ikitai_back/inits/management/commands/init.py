@@ -16,3 +16,11 @@ class Command(BaseCommand):
         # migrate
         subprocess.call("python manage.py makemigrations", shell=True)
         subprocess.call("python manage.py migrate", shell=True)
+
+        # add records
+        with open("inits/fixtures/tables.txt", "r") as f:
+            domains = f.read().splitlines()
+            for domain in domains:
+                subprocess.call(
+                    f'python manage.py loaddata {domain}.json', shell=True
+                )

@@ -1,0 +1,83 @@
+[
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 1,
+        "fields": {
+            "camp_site_id": 1,
+            "facility_id": 1,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 2,
+        "fields": {
+            "camp_site_id": 1,
+            "facility_id": 2,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 3,
+        "fields": {
+            "camp_site_id": 1,
+            "facility_id": 3,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 4,
+        "fields": {
+            "camp_site_id": 2,
+            "facility_id": 1,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 5,
+        "fields": {
+            "camp_site_id": 2,
+            "facility_id": 2,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 6,
+        "fields": {
+            "camp_site_id": 2,
+            "facility_id": 3,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 7,
+        "fields": {
+            "camp_site_id": 3,
+            "facility_id": 1,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 7,
+        "fields": {
+            "camp_site_id": 3,
+            "facility_id": 2,
+            "is_exists": false
+        }
+    },
+    {
+        "model": "camp_sites.CampSiteFacilityRel",
+        "pk": 7,
+        "fields": {
+            "camp_site_id": 3,
+            "facility_id": 3,
+            "is_exists": false
+        }
+    }
+]
