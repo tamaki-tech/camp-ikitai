@@ -20,3 +20,6 @@ class Command(BaseCommand):
         # add records
         subprocess.call("python manage.py loaddata site_type.json", shell=True)
         subprocess.call("python manage.py loaddata user.json", shell=True)
+        subprocess.call("python manage.py loaddata camp_site.json", shell=True)
+        subprocess.call("python manage.py loaddata address.json", shell=True)
+        subprocess.call("python manage.py loaddata coordinate.json", shell=True)

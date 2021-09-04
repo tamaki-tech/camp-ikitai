@@ -22,8 +22,8 @@ class CampSite(models.Model):
     name = models.CharField(max_length=30)
     addition = models.TextField(null=True, blank=True, max_length=300)
     access = models.CharField(max_length=30)
-    phone_number = models.CharField(max_length=30)
-    url = models.CharField(null=True, blank=True, max_length=10)
+    phone_number = models.CharField(null=True, max_length=30)
+    url = models.CharField(null=True, blank=True, max_length=100)
     price = models.IntegerField()
     image_path = models.ImageField(upload_to="images/")
 
