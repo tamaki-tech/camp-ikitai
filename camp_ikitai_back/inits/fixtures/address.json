@@ -7,7 +7,9 @@
             "zip_code": "357-0064",
             "pref_name": "埼玉県",
             "city_name": "飯能市",
-            "other_address": "久下４７２"
+            "other_address": "久下４７２",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -18,7 +20,9 @@
             "zip_code": "369-1221",
             "pref_name": "埼玉県",
             "city_name": "大里郡寄居町",
-            "other_address": "保田原３２１"
+            "other_address": "保田原３２１",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -29,7 +33,9 @@
             "zip_code": "355-0225",
             "pref_name": "埼玉県",
             "city_name": "比企郡嵐山町",
-            "other_address": "鎌形2604"
+            "other_address": "鎌形2604",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     }
 ]

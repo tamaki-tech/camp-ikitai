@@ -6,7 +6,9 @@
             "camp_site_id": 1,
             "user_id": 1,
             "point": 30,
-            "comment": "テストレビューコメント"
+            "comment": "テストレビューコメント",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -16,7 +18,9 @@
             "camp_site_id": 2,
             "user_id": 1,
             "point": 30,
-            "comment": "テストレビューコメント"
+            "comment": "テストレビューコメント",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -26,7 +30,9 @@
             "camp_site_id": 3,
             "user_id": 2,
             "point": 30,
-            "comment": "テストレビューコメント"
+            "comment": "テストレビューコメント",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     }
 ]

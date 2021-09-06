@@ -4,6 +4,8 @@ from django.db import models
 
 class SiteType(models.Model):
     name = models.CharField(max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "site_type"
@@ -12,6 +14,8 @@ class SiteType(models.Model):
 class User(models.Model):
     name = models.CharField(max_length=30)
     mail_address = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "user"
@@ -26,6 +30,8 @@ class CampSite(models.Model):
     url = models.CharField(null=True, blank=True, max_length=100)
     price = models.IntegerField()
     image_path = models.ImageField(upload_to="images/")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "camp_site"
@@ -38,6 +44,8 @@ class Address(models.Model):
     pref_name = models.CharField(blank=True, null=True, max_length=30)
     city_name = models.CharField(blank=True, null=True, max_length=30)
     other_address = models.CharField(blank=True, null=True, max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "address"
@@ -48,6 +56,8 @@ class Coordinate(models.Model):
         CampSite, on_delete=models.PROTECT, primary_key=True)
     let = models.FloatField()
     lon = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "coordinate"
@@ -55,6 +65,8 @@ class Coordinate(models.Model):
 
 class Facility(models.Model):
     name = models.CharField(blank=True, null=True, max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "facility"
@@ -64,6 +76,8 @@ class CampSiteFacilityRel(models.Model):
     camp_site = models.ForeignKey(CampSite, on_delete=models.PROTECT)
     facility = models.ForeignKey(Facility, on_delete=models.PROTECT)
     is_exists = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "camp_site_facility_rel"
@@ -76,6 +90,8 @@ class CampSiteFacilityRel(models.Model):
 class Ikitai(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     camp_site = models.ForeignKey(CampSite, on_delete=models.PROTECT)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "ikitai"
@@ -90,6 +106,8 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     point = models.IntegerField(default=0)
     comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "review"
