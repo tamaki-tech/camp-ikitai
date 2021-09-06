@@ -1,75 +1,105 @@
 @startuml data_model
 
-entity site_type {
-    id
-    --
-    name
+rectangle camp_site {
+    entity site_type {
+        id
+        --
+        name
+        created_at
+        updated_at
+    }
+
+    entity camp_site {
+        id
+        --
+        site_type_id <<FK>>
+        site_name
+        addition
+        access
+        phone_number
+        url
+        price
+        image_path
+        updated_by
+        created_at
+        updated_at
+    }
+    camp_site }|.. site_type
+
+    entity address {
+        camp_site_id <<FK>>
+        --
+        zip_code
+        pref_name
+        city_name
+        other_address
+        created_at
+        updated_at
+    }
+    address||--||camp_site
+
+    entity coordinate {
+        camp_site_id <<FK>>
+        --
+        let
+        lon
+        created_at
+        updated_at
+    }
+    coordinate||--||camp_site
+
+    entity facility {
+        id
+        --
+        name
+        created_at
+        updated_at
+    }
+
+    entity camp_site_facility_rel {
+        camp_site_id <<FK>>
+        facility_id <<FK>>
+        --
+        is_exists
+        created_at
+        updated_at
+    }
+    camp_site_facility_rel }|.. camp_site
+    camp_site_facility_rel }|.. facility
 }
 
-entity camp_site {
-    id
-    --
-    site_type_id <<FK>>
-    site_name
-    addition
-    access
-    phone_number
-    url
-    price
-    image_path
-}
-camp_site }|.. site_type
+rectangle user {
+    entity user {
+        id
+        --
+        name
+        mail_address
+        created_at
+        updated_at
+    }
 
-entity address {
-    address_id <<FK>>
-    --
-    zip_code
-    pref_name
-    city_name
-    other_address
-}
-address||--||camp_site
+    entity review {
+        camp_site_id <<FK>>
+        user_id <<FK>>
+        --
+        review_title
+        point
+        comment
+        created_at
+        updated_at
+    }
+    review }|.. camp_site
+    review }|.. user
 
-entity coordinate {
-    camp_site_id <<FK>>
-    --
-    let
-    lon
+    entity ikitai {
+        user_id <<FK>>
+        camp_site_id <<FK>>
+        --
+        created_at
+        updated_at
+    }
+    ikitai }|.. user
+    ikitai }|.. camp_site
 }
-coordinate||--||camp_site
-
-entity facility {
-    id
-    --
-    camp_site_id <<FK>>
-    name
-    is_exist
-}
-facility }|.. camp_site
-
-entity user {
-    id
-    --
-    name
-    mail_address
-}
-
-entity review {
-    id
-    --
-    camp_site_id <<FK>>
-    user_id <<FK>>
-    point
-    comment
-}
-review }|.. camp_site
-review }|.. user
-
-entity ikitai {
-    user_id <<FK>>
-    camp_site_id <<FK>>
-}
-ikitai }|.. user
-ikitai }|.. camp_site
 
 @enduml
