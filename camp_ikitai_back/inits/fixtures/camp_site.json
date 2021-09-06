@@ -10,7 +10,9 @@
             "phone_number": null,
             "url": "http://okumusashi.life.coocan.jp/kawara.html",
             "price": 1200,
-            "image_path": ""
+            "image_path": "",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -24,7 +26,9 @@
             "phone_number": null,
             "url": "http://okumusashi.life.coocan.jp/kawara.html",
             "price": 700,
-            "image_path": ""
+            "image_path": "",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     },
     {
@@ -38,7 +42,9 @@
             "phone_number": null,
             "url": "http://okumusashi.life.coocan.jp/kawara.html",
             "price": 700,
-            "image_path": ""
+            "image_path": "",
+            "created_at": "2021-09-06T12:00:00.000Z",
+            "updated_at": "2021-09-06T12:00:00.000Z"
         }
     }
 ]
