@@ -1,10 +1,3 @@
-/*!
- * vuex v3.6.2
- * (c) 2021 Evan You
- * @license MIT
- */
-
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -25,6 +18,13 @@ PERFORMANCE OF THIS SOFTWARE.
   * (c) 2015-present Evan You
   * @license MIT
   */
+
+
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
 
 
 /* @preserve
