@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { Vue, Component, PropSync } from 'nuxt-property-decorator'
-import { Features } from '@/domains/campSite/SearchItems'
+import { Features } from '~/domains/search/SearchItems'
 
 @Component
 export default class SearchFeatureCheckBoxList extends Vue {
