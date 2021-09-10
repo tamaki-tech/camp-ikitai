@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { Vue, Component, PropSync } from 'nuxt-property-decorator'
-import { Prefectures } from '@/domains/campSite/SearchItems'
+import { Prefectures } from '~/domains/search/SearchItems'
 
 @Component
 export default class SearchPreCheckBoxList extends Vue {
