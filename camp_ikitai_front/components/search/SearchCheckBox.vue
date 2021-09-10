@@ -1,15 +1,21 @@
 <template>
   <div>
     <h3>{{ label }}</h3>
-    <v-row v-for="itemPair in itemList" :key="itemPair.id" no-gutters dense>
-      <v-col v-for="item in itemPair.value" :key="item.name">
-        <v-checkbox
-          v-model="selectedList"
-          :label="item.name"
-          :value="item.value"
-        />
-      </v-col>
-    </v-row>
+    <div>
+      <table>
+        <tbody>
+          <tr v-for="items in showItemList" :key="items[0].value">
+            <td v-for="item in items" :key="item.value">
+              <v-checkbox
+                v-model="selectedList"
+                :label="item.name"
+                :value="item.value"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <v-divider></v-divider>
     <br />
   </div>
@@ -28,5 +34,18 @@ export default class SearchCheckBox extends Vue {
 
   @Prop()
   label!: string
+
+  showItemList = []
+
+  fetch() {
+    // TODO リファクタ
+    this.showItemList = this.itemList.reduce(
+      (a: any, c: any, i: any) =>
+        i % 2 === 0
+          ? [...a, [c]]
+          : [...a.slice(0, -1), [...a[a.length - 1], c]],
+      []
+    )
+  }
 }
 </script>

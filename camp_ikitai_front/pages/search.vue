@@ -46,8 +46,18 @@
       </v-col>
     </v-row>
     <camp-site-list :camp-site-infoes="dispSiteList" />
-    <search-pref-dialog :dialog.sync="prefSearchDialogShowFlg" />
-    <search-feature-dialog :dialog.sync="featureSearchDialogShowFlg" />
+    <search-dialog
+      :dialog.sync="prefSearchDialogShowFlg"
+      :selected.sync="selectedPrefItems"
+      label="都道府県"
+      :search-items="prefItems"
+    />
+    <search-dialog
+      :dialog.sync="featureSearchDialogShowFlg"
+      :selected.sync="selectedFeatureItems"
+      label="特徴"
+      :search-items="featureItems"
+    />
   </div>
 </template>
 
@@ -56,14 +66,20 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
+import { FeaturesNew, PrefecturesNew } from '@/domains/search/SearchItems'
 
 @Component
 export default class Index extends Vue {
   campSiteService!: CampSiteService
 
   dispSiteList: CampSiteInfo[] = []
+  selectedPrefItems = []
+  selectedFeatureItems = []
   prefSearchDialogShowFlg = false
   featureSearchDialogShowFlg = false
+
+  prefItems = PrefecturesNew
+  featureItems = FeaturesNew
 
   items = [
     '現在地から近い順',

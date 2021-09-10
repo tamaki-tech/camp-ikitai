@@ -1,14 +1,11 @@
 <template>
   <div>
     <search-check-box
+      v-for="item in items"
+      :key="item.label"
       :selected.sync="selectedPrefList"
-      :item-list="prefKanto"
-      label="関東"
-    />
-    <search-check-box
-      :selected.sync="selectedPrefList"
-      :item-list="prefHokuriku"
-      label="北陸・甲信越"
+      :item-list="item.items"
+      :label="item.label"
     />
     <v-btn block color="primary" @click="toSearchResult">
       このエリアで絞り込む
@@ -17,25 +14,21 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, PropSync } from 'nuxt-property-decorator'
-import { Prefectures } from '~/domains/search/SearchItems'
+import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator'
+import SearchItem from '@/domains/search/SearchItems'
 
 @Component
-export default class SearchPreCheckBoxList extends Vue {
+export default class SearchCheckBoxList extends Vue {
   @PropSync('selected', { type: Array, default: null })
   selectedPrefList!: string[]
 
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
 
-  prefKanto: any = []
-  prefHokuriku: any = []
+  @Prop()
+  items!: SearchItem[]
 
-  fetch() {
-    // TODO リファクタ
-    this.prefKanto = Prefectures.kanto
-    this.prefHokuriku = Prefectures.hokuriku
-  }
+  dispItems = []
 
   // TODO親Component側のメソッドを叩くようにリファクタする
   toSearchResult() {

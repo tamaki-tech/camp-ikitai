@@ -11,13 +11,14 @@
           <v-btn icon dark @click="closeDialog">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>都道府県から探す</v-toolbar-title>
+          <v-toolbar-title>{{ label }}から探す</v-toolbar-title>
         </v-toolbar>
         <br />
         <v-card-text>
-          <search-pref-check-box-list
-            :selected.sync="selected"
+          <search-check-box-list
+            :selected.sync="selectedItems"
             :dialog.sync="showDialog"
+            :items="searchItems"
           />
         </v-card-text>
       </v-card>
@@ -26,14 +27,22 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, PropSync } from 'nuxt-property-decorator'
+import { Vue, Component, PropSync, Prop } from 'nuxt-property-decorator'
+import SearchItem from '@/domains/search/SearchItems'
 
 @Component
-export default class SearchPrefDialog extends Vue {
+export default class SearchDialog extends Vue {
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
 
-  selected: string[] = []
+  @PropSync('selected', { type: Array, default: null })
+  selectedItems!: string[]
+
+  @Prop()
+  searchItems!: SearchItem[]
+
+  @Prop()
+  label!: string
 
   closeDialog() {
     this.showDialog = false
