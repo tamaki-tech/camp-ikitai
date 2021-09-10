@@ -1,12 +1,10 @@
-interface Value {
-  name: string
-  value: string
+/* eslint-disable no-useless-constructor */
+class Item {
+  constructor(public name = '', public value = '') {}
 }
-
-interface SearchItem {
-  label: string
-  items: Value[]
-}
+export default class SearchItem {
+    constructor(public label = '', public items:Item[] = []) {}
+  }
 
 export const PrefecturesNew: SearchItem[] = [
   {
