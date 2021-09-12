@@ -3,12 +3,12 @@
     <search-check-box
       v-for="item in items"
       :key="item.label"
-      :selected.sync="selectedPrefList"
+      :selected.sync="selectedItemList"
       :item-list="item.items"
       :label="item.label"
     />
     <v-btn block color="primary" @click="toSearchResult">
-      このエリアで絞り込む
+      この条件で絞り込む
     </v-btn>
   </div>
 </template>
@@ -20,7 +20,7 @@ import SearchItem from '@/domains/search/SearchItems'
 @Component
 export default class SearchCheckBoxList extends Vue {
   @PropSync('selected', { type: Array, default: null })
-  selectedPrefList!: string[]
+  selectedItemList!: string[]
 
   @PropSync('dialog', { type: Boolean, default: false })
   showDialog!: boolean
@@ -38,7 +38,7 @@ export default class SearchCheckBoxList extends Vue {
 
   private createGetParam(): string {
     let res = ''
-    this.selectedPrefList.forEach((pref) => {
+    this.selectedItemList.forEach((pref) => {
       res += res === '' ? `pref=${pref}` : `&pref=${pref}`
     })
     return res
