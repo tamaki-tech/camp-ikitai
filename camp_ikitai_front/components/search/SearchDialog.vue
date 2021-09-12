@@ -8,7 +8,7 @@
     >
       <v-card>
         <v-toolbar dark color="primary">
-          <v-btn icon dark @click="closeDialog">
+          <v-btn icon dark @click="() => {showDialog = false}">
             <v-icon>mdi-close</v-icon>
           </v-btn>
           <v-toolbar-title>{{ label }}から探す</v-toolbar-title>
@@ -43,9 +43,5 @@ export default class SearchDialog extends Vue {
 
   @Prop()
   label!: string
-
-  closeDialog() {
-    this.showDialog = false
-  }
 }
 </script>

@@ -2,19 +2,15 @@
   <div>
     <h3>{{ label }}</h3>
     <div>
-      <table>
-        <tbody>
-          <tr v-for="items in showItemList" :key="items[0].value">
-            <td v-for="item in items" :key="item.value">
-              <v-checkbox
-                v-model="selectedList"
-                :label="item.name"
-                :value="item.value"
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <v-row v-for="items in showItemList" :key="items[0].value">
+        <v-col v-for="item in items" :key="item.value">
+          <v-checkbox
+            v-model="selectedList"
+            :label="item.name"
+            :value="item.value"
+          />
+        </v-col>
+      </v-row>
     </div>
     <v-divider></v-divider>
     <br />
