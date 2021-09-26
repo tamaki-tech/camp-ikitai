@@ -66,7 +66,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
-import { FeaturesNew, PrefecturesNew } from '@/domains/search/SearchItems'
+import { Features, Prefectures } from '@/domains/search/SearchItems'
 
 @Component
 export default class Index extends Vue {
@@ -78,8 +78,8 @@ export default class Index extends Vue {
   prefSearchDialogShowFlg = false
   featureSearchDialogShowFlg = false
 
-  prefItems = PrefecturesNew
-  featureItems = FeaturesNew
+  prefItems = Prefectures
+  featureItems = Features
 
   items = [
     '現在地から近い順',
