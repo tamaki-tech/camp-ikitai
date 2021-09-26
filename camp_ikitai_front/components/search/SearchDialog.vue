@@ -20,6 +20,9 @@
             :dialog.sync="showDialog"
             :items="searchItems"
           />
+        <v-btn block color="primary" @click="search">
+          この条件で絞り込む
+        </v-btn>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -43,5 +46,10 @@ export default class SearchDialog extends Vue {
 
   @Prop()
   label!: string
+
+  search() {
+    this.showDialog = false
+    this.$emit('search')
+  }
 }
 </script>

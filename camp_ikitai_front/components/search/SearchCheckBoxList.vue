@@ -7,9 +7,6 @@
       :item-list="item.items"
       :label="item.label"
     />
-    <v-btn block color="primary" @click="toSearchResult">
-      この条件で絞り込む
-    </v-btn>
   </div>
 </template>
 
@@ -29,19 +26,5 @@ export default class SearchCheckBoxList extends Vue {
   items!: SearchItem[]
 
   dispItems = []
-
-  // TODO親Component側のメソッドを叩くようにリファクタする
-  toSearchResult() {
-    this.showDialog = false
-    return this.$router.push(`/search?${this.createGetParam()}`)
-  }
-
-  private createGetParam(): string {
-    let res = ''
-    this.selectedItemList.forEach((pref) => {
-      res += res === '' ? `pref=${pref}` : `&pref=${pref}`
-    })
-    return res
-  }
 }
 </script>
