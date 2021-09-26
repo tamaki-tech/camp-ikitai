@@ -51,12 +51,14 @@
       :selected.sync="selectedPrefItems"
       label="都道府県"
       :search-items="prefItems"
+      @search="search"
     />
     <search-dialog
       :dialog.sync="featureSearchDialogShowFlg"
       :selected.sync="selectedFeatureItems"
       label="特徴"
       :search-items="featureItems"
+      @search="search"
     />
   </div>
 </template>
@@ -77,6 +79,7 @@ export default class Index extends Vue {
   selectedFeatureItems = []
   prefSearchDialogShowFlg = false
   featureSearchDialogShowFlg = false
+  searchWords = ''
 
   prefItems = Prefectures
   featureItems = Features
@@ -93,12 +96,7 @@ export default class Index extends Vue {
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
-    this.search()
-  }
-
-  async search() {
-    // TODO queryそのまま渡すでバック側に不都合ないか？
-    this.dispSiteList = await this.campSiteService.search(this.$route.query)
+    this.dispSiteList = await this.campSiteService.search(this.$route.fullPath)
   }
 
   showPrefSearchDialog() {
@@ -107,6 +105,21 @@ export default class Index extends Vue {
 
   showFeatureSearchDialog() {
     this.featureSearchDialogShowFlg = true
+  }
+
+  search() {
+    // TODO queryそのまま渡すでバック側に不都合ないか？
+    const param = `keyword=${this.searchWords}${this.createGetParam(this.selectedPrefItems, 'pref')}${this.createGetParam(this.selectedFeatureItems, 'feature')}`
+    return this.$router.push(`/search?${param}`)
+  }
+
+  // TODO 要リファクタ。ビルダーパターンなどが良い？
+  private createGetParam(items: string[], label: string): string {
+    let result = ''
+    items.forEach((item) => {
+      result += `&${label}=${item}`
+    })
+    return result
   }
 }
 </script>
