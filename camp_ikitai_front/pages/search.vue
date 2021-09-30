@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>
+    <div>
       <v-row no-gutters justify="center">
         <v-col cols="6">
           <v-text-field
@@ -24,6 +24,7 @@
       <v-row no-gutters>
         <v-col cols="12">
           <v-text-field
+            v-model="searchWords"
             prefix="キーワード"
             placeholder="施設名・エリアなど"
             solo
@@ -32,20 +33,22 @@
       </v-row>
       <v-row no-gutters>
         <v-col>
-          <v-btn v-model="selected" block color="primary"
-            ><v-icon>mdi-magnify</v-icon>検索</v-btn
-          >
+          <v-btn v-model="selected" block color="primary" @click="search">
+            <v-icon>mdi-magnify</v-icon>検索
+          </v-btn>
         </v-col>
       </v-row>
       <br />
       検索結果: {{ dispSiteList.length }}件
-    </p>
+    </div>
     <v-row>
       <v-col>
         <v-select v-model="selected" :items="items" solo></v-select>
       </v-col>
     </v-row>
     <camp-site-list :camp-site-infoes="dispSiteList" />
+
+    <!-- 詳細検索ダイアログ -->
     <search-dialog
       :dialog.sync="prefSearchDialogShowFlg"
       :selected.sync="selectedPrefItems"
@@ -69,20 +72,24 @@ import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
 import { Features, Prefectures } from '@/domains/search/SearchItems'
+import { SearchUtils } from '@/domains/search/SearchUtils'
 
 @Component
 export default class Index extends Vue {
   campSiteService!: CampSiteService
 
   dispSiteList: CampSiteInfo[] = []
-  selectedPrefItems = []
-  selectedFeatureItems = []
+  selectedPrefItems: string[] = []
+  selectedFeatureItems: string[] = []
+
   prefSearchDialogShowFlg = false
   featureSearchDialogShowFlg = false
   searchWords = ''
 
   prefItems = Prefectures
   featureItems = Features
+
+  selected = ''
 
   items = [
     '現在地から近い順',
@@ -92,11 +99,37 @@ export default class Index extends Vue {
     '料金 低い順',
   ]
 
-  selected = this.items[1]
-
   async fetch() {
+    this.selected = this.items[1]
     this.campSiteService = await ServiceFactory.getContentService()
-    this.dispSiteList = await this.campSiteService.search(this.$route.fullPath)
+    this.setParams()
+    this.search()
+  }
+
+  setParams() {
+    const prefectures = this.$route.query.pref
+    const features = this.$route.query.feature
+    this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
+    this.selectedFeatureItems = features ? (features as string[]) : []
+  }
+
+  async search() {
+    // 検索
+    this.dispSiteList = await this.campSiteService.search(
+      SearchUtils.createParam(
+        this.searchWords.split(' '),
+        this.selectedPrefItems,
+        this.selectedFeatureItems
+      )
+    )
+
+    // URL繋げる
+    const param = SearchUtils.createGetUriParam(
+      this.searchWords.split(' '),
+      this.selectedPrefItems,
+      this.selectedFeatureItems
+    )
+    this.$router.push(`/search?${param}`)
   }
 
   showPrefSearchDialog() {
@@ -105,21 +138,6 @@ export default class Index extends Vue {
 
   showFeatureSearchDialog() {
     this.featureSearchDialogShowFlg = true
-  }
-
-  search() {
-    // TODO queryそのまま渡すでバック側に不都合ないか？
-    const param = `keyword=${this.searchWords}${this.createGetParam(this.selectedPrefItems, 'pref')}${this.createGetParam(this.selectedFeatureItems, 'feature')}`
-    return this.$router.push(`/search?${param}`)
-  }
-
-  // TODO 要リファクタ。ビルダーパターンなどが良い？
-  private createGetParam(items: string[], label: string): string {
-    let result = ''
-    items.forEach((item) => {
-      result += `&${label}=${item}`
-    })
-    return result
   }
 }
 </script>
