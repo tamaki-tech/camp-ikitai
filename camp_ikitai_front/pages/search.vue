@@ -1,52 +1,62 @@
 <template>
   <div>
-    <div>
-      <v-row no-gutters justify="center">
-        <v-col cols="6">
-          <v-text-field
-            prefix="地域"
-            placeholder="選択する"
-            append-icon="mdi-plus-circle"
-            solo
-            @click="showPrefSearchDialog"
-          />
-        </v-col>
-        <v-col cols="6">
-          <v-text-field
-            prefix="条件"
-            placeholder="選択する"
-            append-icon="mdi-plus-circle"
-            solo
-            @click="showFeatureSearchDialog"
-          />
-        </v-col>
-      </v-row>
-      <v-row no-gutters>
-        <v-col cols="12">
-          <v-text-field
-            v-model="searchWords"
-            prefix="キーワード"
-            placeholder="施設名・エリアなど"
-            solo
-          />
-        </v-col>
-      </v-row>
-      <v-row no-gutters>
-        <v-col>
-          <v-btn v-model="selected" block color="primary" @click="search">
-            <v-icon>mdi-magnify</v-icon>検索
-          </v-btn>
-        </v-col>
-      </v-row>
-      <br />
-      検索結果: {{ dispSiteList.length }}件
+    <v-sheet rounded shaped align="center">
+      <br>
+      <v-sheet max-width="900">
+        <div class="mt-3">
+          <v-row no-gutters justify="center">
+            <v-col cols="6">
+              <v-text-field
+                prefix="地域"
+                placeholder="選択する"
+                append-icon="mdi-plus-circle"
+                solo
+                @click="showPrefSearchDialog"
+              />
+            </v-col>
+            <v-col cols="6">
+              <v-text-field
+                prefix="条件"
+                placeholder="選択する"
+                append-icon="mdi-plus-circle"
+                solo
+                @click="showFeatureSearchDialog"
+              />
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col cols="12">
+              <v-text-field
+                v-model="searchWords"
+                prefix="キーワード"
+                placeholder="施設名・エリアなど"
+                solo
+              />
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col>
+              <v-btn v-model="selected" block color="primary" @click="search">
+                <v-icon>mdi-magnify</v-icon>検索
+              </v-btn>
+            </v-col>
+          </v-row>
+          <br />
+          <v-row>
+            <v-col>
+              <v-select v-model="selected" :items="items" solo></v-select>
+            </v-col>
+          </v-row>
+        </div>
+      </v-sheet>
+    </v-sheet>
+    <div class="mt-8 mb-3">
+      <h3>
+        キャンプ場検索結果一覧
+      </h3>
     </div>
-    <v-row>
-      <v-col>
-        <v-select v-model="selected" :items="items" solo></v-select>
-      </v-col>
-    </v-row>
     <camp-site-list :camp-site-infoes="dispSiteList" />
+    <br>
 
     <!-- 詳細検索ダイアログ -->
     <search-dialog
