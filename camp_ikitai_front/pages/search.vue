@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-sheet rounded shaped align="center">
-      <br>
+      <br />
       <v-sheet max-width="900">
         <div class="mt-3">
           <v-row no-gutters justify="center">
@@ -10,7 +10,7 @@
                 prefix="地域"
                 placeholder="選択する"
                 append-icon="mdi-plus-circle"
-                solo
+                outlined
                 @click="showPrefSearchDialog"
               />
             </v-col>
@@ -19,7 +19,7 @@
                 prefix="条件"
                 placeholder="選択する"
                 append-icon="mdi-plus-circle"
-                solo
+                outlined
                 @click="showFeatureSearchDialog"
               />
             </v-col>
@@ -30,13 +30,13 @@
                 v-model="searchWords"
                 prefix="キーワード"
                 placeholder="施設名・エリアなど"
-                solo
+                outlined
               />
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <v-btn v-model="selected" block color="primary" @click="search">
+              <v-btn v-model="selected" block color="primary" elevation="0" @click="search">
                 <v-icon>mdi-magnify</v-icon>検索
               </v-btn>
             </v-col>
@@ -44,20 +44,24 @@
           <br />
           <v-row>
             <v-col>
-              <v-select v-model="selected" :items="items" solo></v-select>
+              <v-select v-model="selected" :items="items" outlined></v-select>
             </v-col>
           </v-row>
         </div>
       </v-sheet>
     </v-sheet>
     <div class="mt-8 mb-3">
-      <h3>
-        キャンプ場検索結果一覧
-      </h3>
+      <v-row>
+        <v-col cols="10">
+          <h3>キャンプ場検索結果一覧</h3>
+        </v-col>
+        <v-col v-if="!$vuetify.breakpoint.mobile" cols="2">
+          検索結果: <strong>{{ dispSiteList.length }}</strong> 件
+        </v-col>
+      </v-row>
     </div>
     <camp-site-list :camp-site-infoes="dispSiteList" />
-    <br>
-
+    <br />
     <!-- 詳細検索ダイアログ -->
     <search-dialog
       :dialog.sync="prefSearchDialogShowFlg"

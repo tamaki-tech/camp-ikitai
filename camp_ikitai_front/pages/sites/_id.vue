@@ -1,35 +1,55 @@
 <template>
   <div>
-    <v-sheet rounded shaped align="center">
-      <v-sheet max-width="850">
+    <v-sheet rounded shaped>
+      <v-sheet max-width="900">
         <div class="mt-5 mb-5">
           <v-row>
-            <h2>{{ campSiteInfo.siteName }}</h2>
+            <v-col cols="12">
+              <h2>{{ campSiteInfo.siteName }}</h2>
+            </v-col>
           </v-row>
           <v-row>
-            <h5>{{ `${campSiteInfo.address.pref} ${campSiteInfo.address.city}` }}</h5>
+            <v-col>
+              <h5>
+                {{
+                  `${campSiteInfo.address.pref} ${campSiteInfo.address.city}`
+                }}
+              </h5>
+            </v-col>
           </v-row>
         </div>
         <v-row>
-          <h4>■設備・ルール</h4>
+          <v-col>
+            <h4>■設備・ルール</h4>
+          </v-col>
         </v-row>
         <facility-exist-part :facilities="campSiteInfo.facilities" />
         <v-row>
-          <h4>■施設補足情報</h4>
+          <v-col>
+            <h4>■施設補足情報</h4>
+          </v-col>
         </v-row>
         <v-row>
-          <p>{{ campSiteInfo.addition }}</p>
+          <v-col>
+            <p>{{ campSiteInfo.addition }}</p>
+          </v-col>
         </v-row>
         <v-row>
-          <h3>基本情報</h3>
+          <v-col>
+            <h3>基本情報</h3>
+          </v-col>
         </v-row>
         <div class="mt-5 mb-5">
           <camp-site-detail :camp-site-info="campSiteInfo" />
         </div>
-        <div class="map">
-          <site-map :center="center" />
-        </div>
-        <br>
+        <v-row>
+          <v-col cols="12">
+            <div class="map">
+              <site-map :center="center" />
+            </div>
+          </v-col>
+        </v-row>
+        <br />
       </v-sheet>
     </v-sheet>
   </div>

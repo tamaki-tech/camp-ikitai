@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar fixed app>
+    <v-app-bar dence flat app>
       <v-spacer />
       <v-toolbar-title> CAMP△IKITAI </v-toolbar-title>
       <v-spacer />
@@ -13,13 +13,11 @@
   </v-app>
 </template>
 
-<script>
-// TODO variables.scssに定義できるのでは？
-export default {
-}
-</script>
-<style scoped>
-.v-application {
-  background-color: #f3f3f3;
-}
+<style scoped lang="scss">
+  /** pc */
+  @media screen and (min-width: 1025px) {
+    .v-application {
+      background-color: #f3f3f3;
+    }
+  }
 </style>

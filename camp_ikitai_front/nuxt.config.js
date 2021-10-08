@@ -65,6 +65,7 @@ export default {
       dark: false,
       themes: {
         light: {
+          primary: colors.teal.darken4,
           link: "#1976d2"
         },
         dark: {
