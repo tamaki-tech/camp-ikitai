@@ -10,8 +10,16 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
+
+<script>
+// TODO variables.scssに定義できるのでは？
+export default {
+}
+</script>
+<style scoped>
+.v-application {
+  background-color: #f3f3f3;
+}
+</style>
