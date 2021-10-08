@@ -1,9 +1,16 @@
 <template>
   <div>
-    <v-row style="height: 450px" justify="center" align-content="center">
+    <v-row style="height: 500px" justify="center" align-content="center">
       <v-col align="center">
-        あなただけのお気に入りが見つかる
-        <h2>キャンプ△イキタイ</h2>
+        <h4>
+          あなただけのお気に入りが見つかる
+        </h4>
+        <v-img
+        class="ml-md-5"
+        src="/logo.png"
+        max-height="500"
+        max-width="500"
+        />
         <br />
         <v-row justify="center">
           <v-col>
