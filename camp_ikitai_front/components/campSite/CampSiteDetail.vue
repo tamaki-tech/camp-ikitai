@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-sheet align="center">
     <v-img contain max-height="500px" :src="campSiteInfo.imagePath" />
     <br />
     <v-row>
@@ -41,7 +41,7 @@
       <v-col cols="8">{{ isExists(campSiteInfo.price) }}</v-col>
     </v-row>
     <v-divider></v-divider>
-  </div>
+  </v-sheet>
 </template>
 
 <script lang="ts">
