@@ -4,18 +4,42 @@
     <v-sheet rounded shaped align="center">
       <v-sheet max-width="900" align="left">
         <div class="mt-4 mb-4">
-          <v-row >
-            <v-col>
-              <h2>{{ campSiteInfo.siteName }}</h2>
-            </v-col>
-          </v-row>
           <v-row>
             <v-col>
-              <h5>
-                {{
-                  `${campSiteInfo.address.pref} ${campSiteInfo.address.city}`
-                }}
-              </h5>
+              <h1>
+                <strong>{{ campSiteInfo.siteName }}</strong>
+              </h1>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col>
+              <h3>
+                <font color="gray">
+                  {{
+                    `${campSiteInfo.address.pref} ${campSiteInfo.address.city}`
+                  }}
+                </font>
+              </h3>
+            </v-col>
+          </v-row>
+          <v-row v-if="!$vuetify.breakpoint.mobile">
+            <v-col cols="2">
+              <v-btn color="secondary" outlined>
+                <v-img src="icon/twitter.svg" height="20px" width="20px" />
+                <strong>ツイートする</strong>
+              </v-btn>
+            </v-col>
+            <v-col cols="2">
+              <v-btn color="secondary" outlined>
+                <v-img src="icon/line.svg" height="20px" width="20px" />
+                <strong>友達に教える</strong>
+              </v-btn>
+            </v-col>
+            <v-col cols="2">
+              <v-btn color="secondary" outlined>
+                <v-img src="icon/facebook.svg" height="25px" width="25px" />
+                <strong>シェアする</strong>
+              </v-btn>
             </v-col>
           </v-row>
           <v-row>
