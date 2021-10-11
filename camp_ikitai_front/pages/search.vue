@@ -84,7 +84,7 @@
       @search="search"
     />
     <div class="text-center mt-5">
-      <v-pagination v-model="page" :length="6" />
+      <v-pagination v-model="page" :length="6" circle />
     </div>
   </div>
 </template>
