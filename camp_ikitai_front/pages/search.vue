@@ -42,7 +42,7 @@
             </v-col>
           </v-row>
           <br />
-          <v-row>
+          <v-row no-gutters>
             <v-col>
               <v-select v-model="selected" :items="items" outlined></v-select>
             </v-col>
@@ -123,8 +123,10 @@ export default class Index extends Vue {
   setParams() {
     const prefectures = this.$route.query.pref
     const features = this.$route.query.feature
+    const keywords = this.$route.query.keyword
     this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
     this.selectedFeatureItems = features ? (features as string[]) : []
+    this.searchWords = typeof keywords === 'string' ? keywords : keywords.join(' ')
   }
 
   async search() {
