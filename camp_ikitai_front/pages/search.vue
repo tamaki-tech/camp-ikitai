@@ -36,7 +36,13 @@
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <v-btn v-model="selected" block color="primary" elevation="0" @click="search">
+              <v-btn
+                v-model="selected"
+                block
+                color="primary"
+                elevation="0"
+                @click="search"
+              >
                 <v-icon>mdi-magnify</v-icon>検索
               </v-btn>
             </v-col>
@@ -77,6 +83,9 @@
       :search-items="featureItems"
       @search="search"
     />
+    <div class="text-center mt-5">
+      <v-pagination v-model="page" :length="6" />
+    </div>
   </div>
 </template>
 
@@ -104,6 +113,7 @@ export default class Index extends Vue {
   featureItems = Features
 
   selected = ''
+  page = 1
 
   items = [
     '現在地から近い順',
@@ -126,8 +136,9 @@ export default class Index extends Vue {
     const keywords = this.$route.query.keyword
     this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
     this.selectedFeatureItems = features ? (features as string[]) : []
-    if (keywords){
-      this.searchWords = typeof keywords === 'string' ? keywords : keywords.join(' ')
+    if (keywords) {
+      this.searchWords =
+        typeof keywords === 'string' ? keywords : keywords.join(' ')
     }
   }
 
