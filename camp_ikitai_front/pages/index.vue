@@ -7,7 +7,7 @@
         </h4>
         <v-img
         class="ml-md-5"
-        src="/logo.png"
+        src="logo.png"
         max-height="500"
         max-width="500"
         />

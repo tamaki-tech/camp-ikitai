@@ -5,7 +5,7 @@
       <v-spacer />
       <v-img
         v-if="$route.path !== '/'"
-        src="/logo.png"
+        src="logo.png"
         max-height="100"
         max-width="100"
         @click="toHome"
@@ -17,7 +17,7 @@
       <v-img
         v-if="$route.path !== '/'"
         class="mt-5 mb-5"
-        src="/logo.png"
+        src="logo.png"
         max-height="200"
         max-width="200"
         @click="toHome"

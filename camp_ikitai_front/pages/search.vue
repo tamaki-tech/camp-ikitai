@@ -126,7 +126,9 @@ export default class Index extends Vue {
     const keywords = this.$route.query.keyword
     this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
     this.selectedFeatureItems = features ? (features as string[]) : []
-    this.searchWords = typeof keywords === 'string' ? keywords : keywords.join(' ')
+    if (keywords){
+      this.searchWords = typeof keywords === 'string' ? keywords : keywords.join(' ')
+    }
   }
 
   async search() {
