@@ -23,15 +23,10 @@
             </v-col>
           </v-row>
           <sns-icons />
-          <v-row>
-            <v-col>
-              <h4>■設備・ルール</h4>
-            </v-col>
-          </v-row>
           <facility-exist-part :facilities="campSiteInfo.facilities" />
-          <v-row>
+          <v-row class="mt-3">
             <v-col>
-              <h4>■施設補足情報</h4>
+              <h2>施設補足情報</h2>
             </v-col>
           </v-row>
           <v-row>
@@ -39,14 +34,7 @@
               <p>{{ campSiteInfo.addition }}</p>
             </v-col>
           </v-row>
-          <v-row>
-            <v-col>
-              <h3>基本情報</h3>
-            </v-col>
-          </v-row>
-          <div class="mt-5 mb-5">
-            <camp-site-detail :camp-site-info="campSiteInfo" />
-          </div>
+          <camp-site-detail :camp-site-info="campSiteInfo" />
           <v-row>
             <v-col cols="12">
               <div class="map">

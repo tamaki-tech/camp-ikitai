@@ -22,16 +22,25 @@
     "facilities": [
         {
             "id": 1,
-            "facilityName": "売店",
+            "facility": "bon_fire",
+            "facilityName": "焚き火",
             "isExist": "×"
         },
         {
             "id": 2,
-            "facilityName": "電源",
+            "facility": "store",
+            "facilityName": "売店",
             "isExist": "×"
         },
         {
             "id": 3,
+            "facility": "power",
+            "facilityName": "電源",
+            "isExist": "×"
+        },
+        {
+            "id": 4,
+            "facility": "shower",
             "facilityName": "シャワー",
             "isExist": "×"
         }
