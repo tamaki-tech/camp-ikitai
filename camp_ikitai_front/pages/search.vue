@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-sheet rounded shaped align="center">
+    <v-sheet rounded shaped align="center" class="rounded-xl">
       <br />
       <v-sheet max-width="900">
         <search-part
@@ -15,10 +15,13 @@
     </v-sheet>
     <div class="mt-8 mb-3">
       <v-row>
-        <v-col cols="10">
+        <v-col cols="8">
           <h3>キャンプ場検索結果一覧</h3>
         </v-col>
-        <v-col v-if="!$vuetify.breakpoint.mobile" cols="2">
+        <v-col v-if="!$vuetify.breakpoint.mobile" cols="2" align="center">
+          <v-select v-model="selected" dense :items="items" />
+        </v-col>
+        <v-col v-if="!$vuetify.breakpoint.mobile" cols="2" align="center">
           検索結果: <strong>{{ dispSiteList.length }}</strong> 件
         </v-col>
       </v-row>
@@ -73,7 +76,7 @@ export default class Index extends Vue {
   page = 1
 
   items = [
-    '現在地から近い順',
+    '近い順',
     'イキタイ多い順',
     'クチコミ 多い順',
     '料金 高い順',

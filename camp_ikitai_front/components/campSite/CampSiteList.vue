@@ -2,7 +2,7 @@
   <div>
     <v-spacer></v-spacer>
     </v-toolbar>
-    <v-sheet rounded shaped align="center">
+    <v-sheet rounded shaped align="center" class="rounded-xl">
       <br>
       <v-sheet v-for="site in campSiteInfoes" :key="site.id" max-width="900" @click="()=>{$router.push(`/sites/${site.id}`)}">
         <div class="mt-4 mb-4">

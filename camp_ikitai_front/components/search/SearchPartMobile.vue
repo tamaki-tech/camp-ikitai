@@ -1,6 +1,6 @@
 <template>
   <div class="mt-3">
-    <v-row justify="center">
+    <v-row no-gutters justify="center">
       <v-col cols="6">
         <v-text-field
           prefix="地域"
@@ -44,7 +44,7 @@
       </v-col>
     </v-row>
     <br />
-    <v-row v-if="$vuetify.breakpoint.mobile" no-gutters>
+    <v-row no-gutters>
       <v-col>
         <v-select v-model="selectedItem" :items="selectItems" outlined></v-select>
       </v-col>
