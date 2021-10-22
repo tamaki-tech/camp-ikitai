@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-spacer></v-spacer>
-    <v-sheet rounded shaped align="center">
+    <v-sheet rounded shaped align="center" class="rounded-xl">
       <v-sheet max-width="900" align="left">
         <div class="mt-4 mb-4">
           <v-row>
