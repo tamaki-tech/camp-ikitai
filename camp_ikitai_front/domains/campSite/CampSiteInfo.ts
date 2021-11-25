@@ -1,5 +1,6 @@
 import Address from "@/domains/campSite/Address";
 import Facility from "./Facility";
+import OtherImage from "./OtherImage";
 
 /* eslint-disable no-useless-constructor */
 export default class CampSiteInfo {
@@ -7,6 +8,7 @@ export default class CampSiteInfo {
     public id = '',
     public siteName = '',
     public addition = '',
+    public imagePath = '',
     public type = '',
     public access = '',
     public phoneNumber = '',
@@ -18,6 +20,7 @@ export default class CampSiteInfo {
     public facilities: Facility[] = [],
     public coordinate: [] = [],
     public ikitai = 0,
-    public reviewCount = 0
+    public reviewCount = 0,
+    public otherImage: OtherImage[] = []
   ) { }
 }

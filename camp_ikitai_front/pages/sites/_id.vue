@@ -34,13 +34,45 @@
               <p>{{ campSiteInfo.addition }}</p>
             </v-col>
           </v-row>
-          <camp-site-detail :camp-site-info="campSiteInfo" />
-          <v-row>
-            <v-col cols="12">
-              <div class="map">
-                <site-map :center="center" />
-              </div>
+          <camp-site-detail-mobile
+            v-if="$vuetify.breakpoint.mobile"
+            :camp-site-info="campSiteInfo"
+            :map-center="center"
+          />
+          <camp-site-detail-pc
+            v-else
+            :camp-site-info="campSiteInfo"
+            :map-center="center"
+          />
+          <v-row class="mt-3">
+            <v-col>
+              <h2>写真ギャラリー</h2>
             </v-col>
+          </v-row>
+          <v-row>
+            <v-row>
+              <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
+                <v-img
+                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                  aspect-ratio="1"
+                  class="grey lighten-2"
+                >
+                  <template #placeholder>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-progress-circular
+                        indeterminate
+                        color="grey lighten-5"
+                      ></v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-img>
+              </v-col>
+            </v-row>
           </v-row>
         </div>
 
@@ -71,11 +103,3 @@ export default class SiteDetail extends Vue {
   }
 }
 </script>
-
-<style scoped>
-.map {
-  z-index: 0;
-  height: 300px;
-  width: 100%;
-}
-</style>
