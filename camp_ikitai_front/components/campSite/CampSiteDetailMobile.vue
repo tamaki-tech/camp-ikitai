@@ -48,6 +48,13 @@
       </v-row>
       <v-divider></v-divider>
     </v-sheet>
+    <v-row>
+      <v-col cols="12">
+        <div class="map">
+          <site-map :center="mapCenter" />
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -56,9 +63,12 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 
 @Component
-export default class SiteDetail extends Vue {
+export default class CampSiteDetailMobile extends Vue {
   @Prop()
   campSiteInfo!: CampSiteInfo
+
+  @Prop()
+  mapCenter!: []
 
   // TODO ハイフンはback側で作った方が良いか？
   isExists(value: string) {
@@ -77,5 +87,11 @@ export default class SiteDetail extends Vue {
   white-space: normal;
   max-width: calc(100% - 30px);
   height: inherit !important;
+}
+
+.map {
+  z-index: 0;
+  height: 300px;
+  width: 100%;
 }
 </style>
