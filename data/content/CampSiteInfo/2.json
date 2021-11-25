@@ -44,5 +44,22 @@
             "facilityName": "シャワー",
             "isExist": "×"
         }
+    ],
+    "otherImage": [
+        {
+            "id": 1,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        },
+        {
+            "id": 2,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        },
+        {
+            "id": 3,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        }
     ]
 }
