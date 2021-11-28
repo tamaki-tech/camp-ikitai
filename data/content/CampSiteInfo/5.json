@@ -1,0 +1,65 @@
+{
+    "id": 5,
+    "siteName": "かわせみ河原キャンプ場",
+    "addition": "意外と知られていませんが、最寄り駅から徒歩やバスで気軽に行けるキャンプ場です。 現在は臨時休業中。",
+    "type": "キャンプ場",
+    "access": "東武東上線 鉢形駅 徒歩 14分",
+    "phoneNumber": null,
+    "url": "http://yorii-kanko.jp/kawasemi.html",
+    "price": null,
+    "address": {
+        "zipCode": "369-1221",
+        "pref": "埼玉県",
+        "city": "大里郡寄居町",
+        "otherAddress": "保田原３２１"
+    },
+    "ikitai": 12,
+    "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg",
+    "coordinate": [
+        36.11785213889304,
+        139.2169909425512
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "facility": "bon_fire",
+            "facilityName": "焚き火",
+            "isExist": "×"
+        },
+        {
+            "id": 2,
+            "facility": "store",
+            "facilityName": "売店",
+            "isExist": "×"
+        },
+        {
+            "id": 3,
+            "facility": "power",
+            "facilityName": "電源",
+            "isExist": "×"
+        },
+        {
+            "id": 4,
+            "facility": "shower",
+            "facilityName": "シャワー",
+            "isExist": "×"
+        }
+    ],
+    "otherImage": [
+        {
+            "id": 1,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        },
+        {
+            "id": 2,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        },
+        {
+            "id": 3,
+            "description": "",
+            "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg"
+        }
+    ]
+}
