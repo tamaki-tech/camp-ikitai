@@ -2,9 +2,9 @@
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
-      fullscreen
-      hide-overlay
-      transition="dialog-bottom-transition"
+      max-width="1000px"
+      persistent
+      no-click-animation
     >
       <v-card>
         <v-toolbar dark color="primary">
