@@ -26,10 +26,18 @@
           <facility-exist-part :facilities="campSiteInfo.facilities" />
           <v-row class="mt-3">
             <v-col>
-              <h2>施設補足情報</h2>
+              <!-- tentアイコン使ってるところ共通化する -->
+              <img
+                width="35px"
+                src="icon/tent.svg"
+                style="float: left"
+                class="mr-3 mt-1"
+                alt=""
+              />
+              <h2 class="mt-1">施設補足情報</h2>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row class="mb-5">
             <v-col>
               <p>{{ campSiteInfo.addition }}</p>
             </v-col>
@@ -44,9 +52,16 @@
             :camp-site-info="campSiteInfo"
             :map-center="center"
           />
-          <v-row class="mt-3">
+          <v-row class="mt-5">
             <v-col>
-              <h2>写真ギャラリー</h2>
+              <img
+                width="35px"
+                src="icon/tent.svg"
+                style="float: left"
+                class="mr-3 mt-1"
+                alt=""
+              />
+              <h2 class="mt-1">写真ギャラリー</h2>
             </v-col>
           </v-row>
           <v-row>

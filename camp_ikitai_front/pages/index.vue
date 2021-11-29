@@ -1,31 +1,42 @@
 <template>
   <div>
+    <span class="bg"></span>
     <v-row style="height: 500px" justify="center" align-content="center">
       <v-col align="center">
-        <h4>
-          あなただけのお気に入りが見つかる
-        </h4>
+        <h4>あなただけのお気に入りが見つかる</h4>
         <v-img
-        class="ml-md-5"
-        src="logo.png"
-        max-height="500"
-        max-width="500"
+          class="ml-md-5"
+          src="logo.png"
+          max-height="500"
+          max-width="500"
         />
         <br />
         <v-row justify="center">
           <v-col>
             <v-btn x-small outlined>キーワードから探す</v-btn>
-            <v-btn color="primary" x-small elevation="0" @click="showPrefSearchDialog">
+            <v-btn
+              color="primary"
+              x-small
+              elevation="0"
+              @click="showPrefSearchDialog"
+            >
               都道府県から探す
             </v-btn>
-            <v-btn color="primary" x-small elevation="0" @click="showFeatureSearchDialog">
+            <v-btn
+              color="primary"
+              x-small
+              elevation="0"
+              @click="showFeatureSearchDialog"
+            >
               特徴から探す
             </v-btn>
           </v-col>
         </v-row>
         <v-text-field v-model="searchWords" :label="message" type="text">
           <template #append-outer>
-            <v-btn color="primary" elevation="0" @click="toSearchResult">検索</v-btn>
+            <v-btn color="primary" elevation="0" @click="toSearchResult"
+              >検索</v-btn
+            >
           </template>
         </v-text-field>
         <v-btn color="primary" elevation="0">現在地から探す</v-btn>

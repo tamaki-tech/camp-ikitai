@@ -2,10 +2,17 @@
   <div>
     <v-row>
       <v-col>
-        <h2>基本情報</h2>
+        <img
+          width="35px"
+          src="icon/tent.svg"
+          style="float: left"
+          class="mr-3 mt-1"
+          alt=""
+        />
+        <h2 class="mt-1">基本情報</h2>
       </v-col>
     </v-row>
-    <v-sheet class="mt-5">
+    <v-sheet class="mt-5 mb-5">
       <div class="flex-container">
         <div class="mr-5">
           <v-img
