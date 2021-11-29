@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-10">
     <v-row class="mt-5">
       <v-col>
         <h2>施設情報</h2>
