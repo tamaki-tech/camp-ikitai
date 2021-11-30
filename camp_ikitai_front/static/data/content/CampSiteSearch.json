@@ -14,13 +14,27 @@
             "city": "飯能市",
             "otherAddress": "久下４７２"
         },
-        "ikitai": 12,
-        "reviewCount": 5,
         "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/1/top.jpeg",
         "coordinate": [
             35.855122,
             139.312329
-        ]
+        ],
+        "bonFire": {
+            "isExist": false,
+            "detail": ""
+        },
+        "shop": {
+            "isExist": false,
+            "detail": ""
+        },
+        "power": {
+            "isExist": false,
+            "detail": ""
+        },
+        "bath": {
+            "isExist": false,
+            "detail": ""
+        }
     },
     {
         "id": 2,
@@ -37,13 +51,27 @@
             "city": "大里郡寄居町",
             "otherAddress": "保田原３２１"
         },
-        "ikitai": 10,
-        "reviewCount": 2,
         "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg",
         "coordinate": [
             36.11785213889304,
             139.2169909425512
-        ]
+        ],
+        "bonFire": {
+            "isExist": false,
+            "detail": ""
+        },
+        "shop": {
+            "isExist": false,
+            "detail": ""
+        },
+        "power": {
+            "isExist": false,
+            "detail": ""
+        },
+        "bath": {
+            "isExist": false,
+            "detail": ""
+        }
     },
     {
         "id": 3,
@@ -60,13 +88,27 @@
             "city": "比企郡嵐山町",
             "otherAddress": "鎌形2604"
         },
-        "ikitai": 3,
-        "reviewCount": 24,
         "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/3/top.jpeg",
         "coordinate": [
             36.031107918470326,
             139.30292760235608
-        ]
+        ],
+        "bonFire": {
+            "isExist": false,
+            "detail": ""
+        },
+        "shop": {
+            "isExist": false,
+            "detail": ""
+        },
+        "power": {
+            "isExist": false,
+            "detail": ""
+        },
+        "bath": {
+            "isExist": false,
+            "detail": ""
+        }
     },
     {
         "id": 4,
@@ -83,13 +125,27 @@
             "city": "飯能市",
             "otherAddress": "久下４７２"
         },
-        "ikitai": 12,
-        "reviewCount": 5,
         "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/1/top.jpeg",
         "coordinate": [
             35.855122,
             139.312329
-        ]
+        ],
+        "bonFire": {
+            "isExist": false,
+            "detail": ""
+        },
+        "shop": {
+            "isExist": false,
+            "detail": ""
+        },
+        "power": {
+            "isExist": false,
+            "detail": ""
+        },
+        "bath": {
+            "isExist": false,
+            "detail": ""
+        }
     },
     {
         "id": 5,
@@ -106,12 +162,26 @@
             "city": "大里郡寄居町",
             "otherAddress": "保田原３２１"
         },
-        "ikitai": 10,
-        "reviewCount": 2,
         "imagePath": "https://camp-ikitai-demo.s3.ap-northeast-1.amazonaws.com/data/img/campSiteInfo/2/top.jpeg",
         "coordinate": [
             36.11785213889304,
             139.2169909425512
-        ]
+        ],
+        "bonFire": {
+            "isExist": false,
+            "detail": ""
+        },
+        "shop": {
+            "isExist": false,
+            "detail": ""
+        },
+        "power": {
+            "isExist": false,
+            "detail": ""
+        },
+        "bath": {
+            "isExist": false,
+            "detail": ""
+        }
     }
 ]

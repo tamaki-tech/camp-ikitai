@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div>
-      <v-app-bar v-if="$vuetify.breakpoint.mobile">
+      <v-app-bar v-if="$vuetify.breakpoint.mobile" flat app>
         <v-app-bar-nav-icon />
         <v-spacer />
         <v-img

@@ -23,7 +23,7 @@
             </v-col>
           </v-row>
           <sns-icons />
-          <facility-exist-part :facilities="campSiteInfo.facilities" />
+          <facility-exist-part :camp-site-info="campSiteInfo" />
           <v-row class="mt-3">
             <v-col>
               <!-- tentアイコン使ってるところ共通化する -->

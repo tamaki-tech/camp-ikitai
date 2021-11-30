@@ -19,32 +19,22 @@
         35.855122,
         139.312329
     ],
-    "facilities": [
-        {
-            "id": 1,
-            "facility": "bon_fire",
-            "facilityName": "焚き火",
-            "isExist": "×"
-        },
-        {
-            "id": 2,
-            "facility": "store",
-            "facilityName": "売店",
-            "isExist": "×"
-        },
-        {
-            "id": 3,
-            "facility": "power",
-            "facilityName": "電源",
-            "isExist": "×"
-        },
-        {
-            "id": 4,
-            "facility": "shower",
-            "facilityName": "シャワー",
-            "isExist": "×"
-        }
-    ],
+    "bonFire": {
+        "isExist": false,
+        "detail": "直火NG"
+    },
+    "shop": {
+        "isExist": false,
+        "detail": ""
+    },
+    "power": {
+        "isExist": false,
+        "detail": ""
+    },
+    "bath": {
+        "isExist": false,
+        "detail": ""
+    },
     "otherImage": [
         {
             "id": 1,
