@@ -23,33 +23,6 @@
                   {{ site.access }}
                 </div>
               </v-row>
-              <v-row no-gutters>
-                <div class="text-caption">
-                  {{ site.price }} 円
-                </div>
-              </v-row>
-            <v-row no-gutters>
-              <v-col cols="6">
-                <div class="text-caption">
-                  <strong>
-                    イキタイ
-                  </strong>
-                  <v-chip color="red" outlined x-small>
-                  {{ site.ikitai }}
-                  </v-chip>
-                </div>
-              </v-col>
-              <v-col cols="6">
-                <div class="text-caption">
-                  <strong>
-                    クチコミ
-                  </strong>
-                  <v-chip color="red" outlined x-small>
-                    {{ site.reviewCount }}
-                  </v-chip>
-                </div>
-              </v-col>
-            </v-row>
             </v-col>
           </v-row>
         </div>

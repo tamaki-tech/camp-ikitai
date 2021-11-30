@@ -28,6 +28,7 @@
     </div>
     <camp-site-list :camp-site-infoes="dispSiteList" />
     <br />
+
     <!-- 詳細検索ダイアログ -->
     <search-dialog
       :dialog.sync="prefSearchDialogShowFlg"

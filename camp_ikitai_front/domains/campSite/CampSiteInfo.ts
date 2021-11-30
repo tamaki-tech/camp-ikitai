@@ -17,10 +17,11 @@ export default class CampSiteInfo {
     public lon = 0.0,
     public price = '',
     public address = Address,
-    public facilities: Facility[] = [],
+    public bonFire = Facility,
+    public shop = Facility,
+    public power = Facility,
+    public bath = Facility,
     public coordinate: [] = [],
-    public ikitai = 0,
-    public reviewCount = 0,
     public otherImage: OtherImage[] = []
   ) { }
 }

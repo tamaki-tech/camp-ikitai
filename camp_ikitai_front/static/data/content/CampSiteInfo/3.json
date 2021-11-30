@@ -19,32 +19,22 @@
         36.031107918470326,
         139.30292760235608
     ],
-    "facilities": [
-        {
-            "id": 1,
-            "facility": "bon_fire",
-            "facilityName": "焚き火",
-            "isExist": "×"
-        },
-        {
-            "id": 2,
-            "facility": "store",
-            "facilityName": "売店",
-            "isExist": "×"
-        },
-        {
-            "id": 3,
-            "facility": "power",
-            "facilityName": "電源",
-            "isExist": "×"
-        },
-        {
-            "id": 4,
-            "facility": "shower",
-            "facilityName": "シャワー",
-            "isExist": "×"
-        }
-    ],
+    "bonFire": {
+        "isExist": false,
+        "detail": ""
+    },
+    "shop": {
+        "isExist": false,
+        "detail": ""
+    },
+    "power": {
+        "isExist": false,
+        "detail": ""
+    },
+    "bath": {
+        "isExist": false,
+        "detail": ""
+    },
     "otherImage": [
         {
             "id": 1,
