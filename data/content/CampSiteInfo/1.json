@@ -25,15 +25,15 @@
     },
     "shop": {
         "isExist": false,
-        "detail": ""
+        "detail": "-"
     },
     "power": {
         "isExist": false,
-        "detail": ""
+        "detail": "-"
     },
     "bath": {
         "isExist": false,
-        "detail": ""
+        "detail": "キャンプ場には無いが、近隣ホテルの温泉をデイユース利用可能（徒歩5分）"
     },
     "otherImage": [
         {
