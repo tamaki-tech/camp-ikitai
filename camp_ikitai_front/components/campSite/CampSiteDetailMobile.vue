@@ -44,7 +44,8 @@
       <v-divider></v-divider>
       <v-row>
         <v-col cols="4" align-self="center"><strong>料金</strong></v-col>
-        <v-col cols="8">{{ isExists(campSiteInfo.price) }}</v-col>
+        <!-- TODO XSS対策 -->
+        <v-col cols="8" v-html="isExists(campSiteInfo.price)" />
       </v-row>
       <v-divider></v-divider>
     </v-sheet>

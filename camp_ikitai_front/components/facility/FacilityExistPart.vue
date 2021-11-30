@@ -66,7 +66,7 @@
           <v-col cols="2" class="mt-2 mb-3">
             <h1>{{ campSite.bath.isExist ? '⚪︎' : '×' }}</h1>
           </v-col>
-          <v-col cols="2" class="mt-5">
+          <v-col cols="4" class="mt-5">
             {{ campSite.bath.detail }}
           </v-col>
         </v-row>
