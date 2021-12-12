@@ -8,65 +8,65 @@
     <v-sheet align="center">
       <div>
         <v-row>
-          <v-col cols="2" class="mt-3 mb-4">
+          <v-col cols="2" xs="4" class="mt-3 mb-4">
             <v-img
               contain
               max-height="42"
               :src="`icon/facility/bon_fire.svg`"
             />
           </v-col>
-          <v-col cols="3" class="mt-5 mb-4">
+          <v-col cols="3" xs="4" class="mt-5 mb-4">
             <strong>焚き火</strong>
           </v-col>
-          <v-col cols="2" class="mt-2 mb-3">
+          <v-col cols="2" xs="4" class="mt-2 mb-3">
             <h1>{{ campSite.bonFire.isExist ? '⚪︎' : '×' }}</h1>
           </v-col>
-          <v-col cols="2" class="mt-5">
+          <v-col v-if="!$vuetify.breakpoint.mobile" cols="2" xs="0" class="mt-5">
             {{ campSite.bonFire.detail }}
           </v-col>
         </v-row>
         <v-divider />
         <v-row>
-          <v-col cols="2" class="mt-3 mb-4">
+          <v-col cols="2" xs="4" class="mt-3 mb-4">
             <v-img contain max-height="42" :src="`icon/facility/store.svg`" />
           </v-col>
-          <v-col cols="3" class="mt-5 mb-4">
+          <v-col cols="3" xs="4" class="mt-5 mb-4">
             <strong>売店</strong>
           </v-col>
-          <v-col cols="2" class="mt-2 mb-3">
+          <v-col cols="2" xs="4" class="mt-2 mb-3">
             <h1>{{ campSite.shop.isExist ? '⚪︎' : '×' }}</h1>
           </v-col>
-          <v-col cols="2" class="mt-5">
+          <v-col v-if="!$vuetify.breakpoint.mobile" cols="2" xs="0" class="mt-5">
             {{ campSite.shop.detail }}
           </v-col>
         </v-row>
         <v-divider />
         <v-row>
-          <v-col cols="2" class="mt-3 mb-4">
+          <v-col cols="2" xs="4" class="mt-3 mb-4">
             <v-img contain max-height="42" :src="`icon/facility/power.svg`" />
           </v-col>
-          <v-col cols="3" class="mt-5 mb-4">
+          <v-col cols="3" xs="4" class="mt-5 mb-4">
             <strong>電源</strong>
           </v-col>
-          <v-col cols="2" class="mt-2 mb-3">
+          <v-col cols="2" xs="4" class="mt-2 mb-3">
             <h1>{{ campSite.power.isExist ? '⚪︎' : '×' }}</h1>
           </v-col>
-          <v-col cols="2" class="mt-5">
+          <v-col v-if="!$vuetify.breakpoint.mobile" cols="2" xs="0" class="mt-5">
             {{ campSite.power.detail }}
           </v-col>
         </v-row>
         <v-divider />
         <v-row>
-          <v-col cols="2" class="mt-3 mb-4">
+          <v-col cols="2" xs="4" class="mt-3 mb-4">
             <v-img contain max-height="42" :src="`icon/facility/shower.svg`" />
           </v-col>
-          <v-col cols="3" class="mt-5 mb-4">
+          <v-col cols="3" xs="4" class="mt-5 mb-4">
             <strong>シャワー・風呂</strong>
           </v-col>
-          <v-col cols="2" class="mt-2 mb-3">
+          <v-col cols="2" xs="4" class="mt-2 mb-3">
             <h1>{{ campSite.bath.isExist ? '⚪︎' : '×' }}</h1>
           </v-col>
-          <v-col cols="4" class="mt-5">
+          <v-col v-if="!$vuetify.breakpoint.mobile" cols="4" xs="0" class="mt-5">
             {{ campSite.bath.detail }}
           </v-col>
         </v-row>
