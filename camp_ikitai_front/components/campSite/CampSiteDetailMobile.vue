@@ -2,6 +2,13 @@
   <div>
     <v-row>
       <v-col>
+        <img
+          width="35px"
+          src="icon/tent.svg"
+          style="float: left"
+          class="mr-3"
+          alt=""
+        />
         <h2>基本情報</h2>
       </v-col>
     </v-row>

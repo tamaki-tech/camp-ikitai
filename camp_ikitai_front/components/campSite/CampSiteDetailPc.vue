@@ -61,7 +61,7 @@
               <td class="table-td" v-html="campSiteInfo.price"></td>
             </tr>
           </table>
-          <div class="mt-5"></div>
+          <div class="mt-5" />
         </div>
       </div>
     </v-sheet>
