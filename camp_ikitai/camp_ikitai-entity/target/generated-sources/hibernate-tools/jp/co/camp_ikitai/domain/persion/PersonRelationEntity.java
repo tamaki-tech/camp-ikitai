@@ -1,5 +1,5 @@
 package jp.co.camp_ikitai.domain.persion;
-// Generated 2021/12/26 18:50:03 by Hibernate Tools 5.3.9.Final
+// Generated 2021/12/26 18:52:04 by Hibernate Tools 5.3.9.Final
 
 
 import javax.persistence.AttributeOverride;
