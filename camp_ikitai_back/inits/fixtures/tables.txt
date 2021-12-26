@@ -1,9 +1,0 @@
-site_type
-user
-camp_site
-address
-coordinate
-facility
-camp_site_facility_rel
-ikitai
-review
