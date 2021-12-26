@@ -28,7 +28,22 @@ CREATE TABLE person_address (
 );
 
 CREATE TABLE site_type (
-    id INT NOT NULL,
+    id INT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
+    ${commonColumns}
+);
+
+CREATE TABLE camp_site (
+    id INT PRIMARY KEY,
+    site_type_id INT REFERENCES site_type,
+    site_name varchar(200),
+    addition varchar(1000),
+    access varchar(100),
+    phone_number varchar(30),
+    url varchar(100),
+    price varchar(200),
+    image_path varchar(100),
+    latitude VARCHAR(30),
+    longitude VARCHAR(30),
     ${commonColumns}
 );
