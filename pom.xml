@@ -439,7 +439,7 @@
     <module>camp_ikitai-entity</module>
           
     
-    <module>camp_ikitai-sample-spring</module>
+    <module>camp_ikitai-back</module>
       
   </modules>
     
