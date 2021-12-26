@@ -22,11 +22,11 @@
     </exec>
 
     <exec executable="${mvn.cmd}" failonerror="true">
-      <arg line="-f camp_ikitai-migration -P migrate"/>
+      <arg line="-f camp-ikitai-migration -P migrate"/>
     </exec>
 
     <exec executable="${mvn.cmd}" failonerror="true">
-      <arg line="-f camp_ikitai-entity -P reveng"/>
+      <arg line="-f camp-ikitai-entity -P reveng"/>
     </exec>
 
     <exec executable="${mvn.cmd}" failonerror="true">

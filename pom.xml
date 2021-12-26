@@ -432,14 +432,14 @@
               
     
     
-    <module>camp_ikitai-migration</module>
+    <module>camp-ikitai-migration</module>
               
     
     
-    <module>camp_ikitai-entity</module>
+    <module>camp-ikitai-entity</module>
           
     
-    <module>camp_ikitai-back</module>
+    <module>camp-ikitai-back</module>
       
   </modules>
     
