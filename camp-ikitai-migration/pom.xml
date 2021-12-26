@@ -7,6 +7,11 @@
   <dependencies>
     <dependency>
       <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>${flyway.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.flywaydb</groupId>
       <artifactId>flyway-commandline</artifactId>
       <version>${flyway.version}</version>
     </dependency>
@@ -14,10 +19,21 @@
       <groupId>${db.jdbc.groupId}</groupId>
       <artifactId>${db.jdbc.artifactId}</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>io.sitoolkit.csv</groupId>
+      <artifactId>sit-csvloader-core</artifactId>
+      <version>0.9-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <properties>
     <flyway.mainClass>org.flywaydb.commandline.Main</flyway.mainClass>
+    <mig.target>dev</mig.target>
   </properties>
 
   <parent>
@@ -28,6 +44,14 @@
 
 
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>**/V002__AddRecords_*/*</exclude>
+        </excludes>
+      </resource>
+    </resources>
 
     <plugins>
 
@@ -62,12 +86,10 @@
       <id>migrate</id>
 
       <build>
-        <defaultGoal>process-resources exec:java</defaultGoal>
+        <!-- process-resources exec:java だとAddRecordsが動かない -->
+        <defaultGoal>clean compile exec:java</defaultGoal>
 
         <resources>
-          <resource>
-            <directory>src/main/resources</directory>
-          </resource>
           <resource>
             <directory>src/local/resources</directory>
             <filtering>true</filtering>
