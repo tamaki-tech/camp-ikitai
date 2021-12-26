@@ -26,3 +26,9 @@ CREATE TABLE person_address (
     CONSTRAINT person_address_pk PRIMARY KEY (person_id, serial_num),
     CONSTRAINT person_address_fk FOREIGN KEY (person_id) REFERENCES person(id)
 );
+
+CREATE TABLE site_type (
+    id INT NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    ${commonColumns}
+);
