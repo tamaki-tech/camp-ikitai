@@ -1,4 +1,4 @@
-package jp.co.camp_ikitai.entity.infra.jpa;
+package jp.co.campikitai.entity.infra.jpa;
 
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +45,7 @@ public class CustomReverseEngineeringStrategy extends DelegatingReverseEngineeri
     addMeta(map, "use-in-equals", "true");
     addMeta(map, "use-in-tostring", "true");
     addMeta(map, "extends", "BaseEntity");
-    addMeta(map, "extra-import", "jp.co.camp_ikitai.infra.jpa.BaseEntity");
+    addMeta(map, "extra-import", "jp.co.campikitai.infra.jpa.BaseEntity");
 
     return map;
   }

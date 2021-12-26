@@ -21,8 +21,8 @@
   </properties>
 
   <parent>
-    <groupId>jp.co.camp_ikitai</groupId>
-    <artifactId>camp_ikitai</artifactId>
+    <groupId>jp.co.campikitai</groupId>
+    <artifactId>camp-ikitai</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 

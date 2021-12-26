@@ -1,4 +1,4 @@
-package jp.co.camp_ikitai.infra.jpa;
+package jp.co.campikitai.infra.jpa;
 
 import java.time.LocalDateTime;
 

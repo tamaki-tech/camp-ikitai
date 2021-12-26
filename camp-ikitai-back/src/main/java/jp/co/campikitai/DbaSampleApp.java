@@ -1,4 +1,4 @@
-package jp.co.camp_ikitai;
+package jp.co.campikitai;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
