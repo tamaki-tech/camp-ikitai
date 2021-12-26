@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DbaSampleApp<camp-ikitai-back>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "jp.co.campikitai.DbaSampleApp",
+            "projectName": "camp-ikitai-back",
+            "args": ""
+        }
+    ]
+}
