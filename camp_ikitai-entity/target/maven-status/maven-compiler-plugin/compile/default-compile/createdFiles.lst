@@ -1,0 +1,7 @@
+jp/co/camp_ikitai/infra/jpa/BaseEntity.class
+jp/co/camp_ikitai/domain/persion/PersonAddressEntityId.class
+jp/co/camp_ikitai/domain/persion/PersonAddressEntity.class
+jp/co/camp_ikitai/domain/persion/PersonRelationEntity.class
+jp/co/camp_ikitai/domain/persion/PersonRelationEntityId.class
+jp/co/camp_ikitai/domain/persion/PersonEntity.class
+jp/co/camp_ikitai/infra/jpa/BaseEntityListener.class
