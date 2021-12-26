@@ -1,4 +1,4 @@
-package jp.co.camp_ikitai.entity.infra.jpa;
+package jp.co.campikitai.entity.infra.jpa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
@@ -10,7 +10,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import jp.co.camp_ikitai.domain.persion.PersonEntity;
+import jp.co.campikitai.domain.persion.PersonEntity;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration

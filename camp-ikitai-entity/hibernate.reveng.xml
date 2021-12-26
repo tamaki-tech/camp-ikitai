@@ -15,8 +15,10 @@
 
   <table-filter match-name="flyway_schema_history" exclude="true" />
 
-  <table-filter match-name="person" package="jp.co.camp_ikitai.domain.persion"></table-filter>
-  <table-filter match-name="person_relation" package="jp.co.camp_ikitai.domain.persion"></table-filter>
-  <table-filter match-name="person_address" package="jp.co.camp_ikitai.domain.persion"></table-filter>
+  <table-filter match-name="person" package="jp.co.campikitai.domain.persion"></table-filter>
+  <table-filter match-name="person_relation" package="jp.co.campikitai.domain.persion"></table-filter>
+  <table-filter match-name="person_address" package="jp.co.campikitai.domain.persion"></table-filter>
+  <table-filter match-name="site_type" package="jp.co.campikitai.domain.campSite"></table-filter>
+  <table-filter match-name="camp_site" package="jp.co.campikitai.domain.campSite"></table-filter>
 
 </hibernate-reverse-engineering>

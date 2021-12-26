@@ -1,4 +1,4 @@
-package jp.co.camp_ikitai.domain.persion;
+package jp.co.campikitai.domain.persion;
 
 import java.util.List;
 

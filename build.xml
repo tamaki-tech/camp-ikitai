@@ -1,4 +1,4 @@
-<project xmlns:if="ant:if" xmlns:unless="ant:unless" name="camp_ikitai" basedir="." default="install">
+<project xmlns:if="ant:if" xmlns:unless="ant:unless" name="camp-ikitai" basedir="." default="install">
 
   <condition property="mvn.cmd" value="${basedir}\mvnw.cmd" else="${basedir}\mvnw">
     <os family="windows" />
