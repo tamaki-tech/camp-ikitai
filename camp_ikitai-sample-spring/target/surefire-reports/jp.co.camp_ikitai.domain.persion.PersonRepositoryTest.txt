@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: jp.co.camp_ikitai.domain.persion.PersonRepositoryTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 sec
