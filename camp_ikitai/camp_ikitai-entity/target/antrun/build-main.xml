@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <property name="maven.compile.classpath" refid="maven.compile.classpath" />
+    <ant antfile="/Users/nmatsumoto/workspace/camp-ikitai/camp_ikitai/camp_ikitai-entity/build.xml" />
+  </target>
+</project>
