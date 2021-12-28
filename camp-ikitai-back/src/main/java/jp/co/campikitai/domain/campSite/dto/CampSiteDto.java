@@ -13,6 +13,7 @@ public class CampSiteDto {
     private SiteTypeDto siteType;
     private String siteName;
     private String addition;
+    private PrefectureDto prefecture;
     private String access;
     private String phoneNumber;
     private String url;

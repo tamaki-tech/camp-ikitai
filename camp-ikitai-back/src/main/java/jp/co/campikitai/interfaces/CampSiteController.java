@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.campikitai.domain.campSite.CampSiteService;
 import jp.co.campikitai.domain.campSite.dto.CampSiteDto;
+import jp.co.campikitai.domain.campSite.response.InitResponse;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -18,12 +19,15 @@ import lombok.RequiredArgsConstructor;
 public class CampSiteController {
 
     private final CampSiteService campSiteService;
-    private final ModelMapper mapper;
 
     @GetMapping("")
     public List<CampSiteDto> find() {
-        List<CampSiteDto> campSites = new ArrayList<>();
-        campSiteService.findAll().forEach(entity -> campSites.add(mapper.map(entity, CampSiteDto.class)));
-        return campSites;
+        return campSiteService.findAll();
     }
+
+    @GetMapping("/init")
+    public InitResponse init() {
+        return campSiteService.init();
+    }
+
 }

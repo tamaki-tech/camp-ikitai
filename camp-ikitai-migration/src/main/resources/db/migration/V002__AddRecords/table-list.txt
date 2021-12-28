@@ -1,4 +1,5 @@
 site_type
+prefecture
 camp_site
 facility
 camp_site_facility_rel
