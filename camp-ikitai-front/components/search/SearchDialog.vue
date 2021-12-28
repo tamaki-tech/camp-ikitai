@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { Vue, Component, PropSync, Prop } from 'nuxt-property-decorator'
-import SearchItem from '@/domains/search/SearchItems'
+import { SearchItems } from '~/domains/campSite/SearchItems'
 
 @Component
 export default class SearchDialog extends Vue {
@@ -42,7 +42,7 @@ export default class SearchDialog extends Vue {
   selectedItems!: string[]
 
   @Prop()
-  searchItems!: SearchItem[]
+  searchItems!: SearchItems[]
 
   @Prop()
   label!: string

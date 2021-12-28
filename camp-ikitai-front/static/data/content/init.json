@@ -42,42 +42,5 @@
             "name": "laundry",
             "displayName": "ランドリー"
         }
-    ],
-    "prefectures": [
-        {
-            "id": 1,
-            "name": "ibaragi",
-            "displayName": "茨城県"
-        },
-        {
-            "id": 2,
-            "name": "tochigi",
-            "displayName": "栃木県"
-        },
-        {
-            "id": 3,
-            "name": "gunnma",
-            "displayName": "群馬県"
-        },
-        {
-            "id": 4,
-            "name": "saitama",
-            "displayName": "埼玉県"
-        },
-        {
-            "id": 5,
-            "name": "chiba",
-            "displayName": "千葉県"
-        },
-        {
-            "id": 6,
-            "name": "tokyo",
-            "displayName": "東京都"
-        },
-        {
-            "id": 7,
-            "name": "kanagawa",
-            "displayName": "神奈川県"
-        }
     ]
 }

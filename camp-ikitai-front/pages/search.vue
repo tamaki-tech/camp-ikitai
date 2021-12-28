@@ -55,8 +55,9 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
-import { Features, Prefectures } from '@/domains/search/SearchItems'
 import { SearchUtils } from '@/domains/search/SearchUtils'
+import { Prefectures } from '~/domains/search/PrefectureItems'
+import { InitResponse, SearchItems } from '~/domains/campSite/SearchItems'
 
 @Component
 export default class Index extends Vue {
@@ -70,8 +71,9 @@ export default class Index extends Vue {
   featureSearchDialogShowFlg = false
   searchWords = ''
 
+  initResponse!: InitResponse
   prefItems = Prefectures
-  featureItems = Features
+  featureItems: SearchItems[] = []
 
   selected = ''
   page = 1
@@ -87,8 +89,22 @@ export default class Index extends Vue {
   async fetch() {
     this.selected = this.items[1]
     this.campSiteService = await ServiceFactory.getContentService()
+    this.initResponse = await this.campSiteService.init()
+    this.setFacilities()
     this.setParams()
     this.search()
+  }
+
+  // TODO 共通化
+  setFacilities() {
+    this.featureItems.push({
+      label: '施設タイプ',
+      items: this.initResponse.siteTypes,
+    })
+    this.featureItems.push({
+      label: '場内設備',
+      items: this.initResponse.facilities,
+    })
   }
 
   setParams() {

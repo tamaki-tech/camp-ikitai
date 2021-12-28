@@ -3,11 +3,11 @@
     <h3>{{ label }}</h3>
     <div>
       <v-row v-for="items in showItemList" :key="items[0].value">
-        <v-col v-for="item in items" :key="item.value">
+        <v-col v-for="item in items" :key="item.id">
           <v-checkbox
             v-model="selectedList"
-            :label="item.name"
-            :value="item.value"
+            :label="item.displayName"
+            :value="item.name"
           />
         </v-col>
       </v-row>

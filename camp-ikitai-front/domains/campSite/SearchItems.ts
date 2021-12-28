@@ -5,11 +5,14 @@ export interface SearchItem {
 }
 
 export type Facility = SearchItem
-export type Prefecture = SearchItem
 export type SiteType = SearchItem
 
 export interface InitResponse {
-  facilities: Facility
-  prefectures: Prefecture
-  siteTypes: SiteType
+  facilities: Facility[]
+  siteTypes: SiteType[]
+}
+
+export interface SearchItems {
+  label: string
+  items: SearchItem[]
 }
