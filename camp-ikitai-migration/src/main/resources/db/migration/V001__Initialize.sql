@@ -30,6 +30,7 @@ CREATE TABLE person_address (
 CREATE TABLE site_type (
     id INT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
+    display_name varchar(30),
     ${commonColumns}
 );
 
@@ -43,7 +44,28 @@ CREATE TABLE camp_site (
     url varchar(100),
     price varchar(200),
     image_path varchar(100),
-    latitude VARCHAR(30),
-    longitude VARCHAR(30),
+    latitude varchar(30),
+    longitude varchar(30),
     ${commonColumns}
+);
+
+CREATE TABLE facility (
+    id INT PRIMARY KEY,
+    name varchar(30),
+    display_name varchar(30),
+    ${commonColumns}
+);
+
+CREATE TABLE prefecture (
+    id varchar(20) PRIMARY KEY,
+    name varchar (30),
+    display_name varchar(30),
+    ${commonColumns}
+);
+
+CREATE TABLE camp_site_facility_rel (
+    camp_site_id INT REFERENCES camp_site,
+    facility_id INT REFERENCES facility,
+    ${commonColumns},
+    PRIMARY KEY(camp_site_id, facility_id)
 );

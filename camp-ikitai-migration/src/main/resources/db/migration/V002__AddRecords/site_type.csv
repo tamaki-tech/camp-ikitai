@@ -1,3 +1,5 @@
-id,name
-1,林間キャンプ場
-2,河原キャンプ場
+id,name,display_name
+1,autoCampSite,オートキャンプ場
+2,campSite,林間キャンプ場
+3,lodge,ロッジ
+4,bungalow,バンガロー
