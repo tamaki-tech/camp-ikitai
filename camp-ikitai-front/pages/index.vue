@@ -65,6 +65,7 @@ import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import { Features, Prefectures } from '@/domains/search/SearchItems'
 import { SearchUtils } from '@/domains/search/SearchUtils'
+import ServiceFactory from '~/domains/ServiceFactory'
 
 @Component
 export default class Index extends Vue {
@@ -81,6 +82,11 @@ export default class Index extends Vue {
 
   prefItems = Prefectures
   featureItems = Features
+
+  async fetch() {
+    this.campSiteService = await ServiceFactory.getContentService()
+    console.log(await this.campSiteService.init())
+  }
 
   showPrefSearchDialog() {
     this.prefSearchDialogShowFlg = true

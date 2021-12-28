@@ -1,0 +1,83 @@
+{
+    "siteTypes": [
+        {
+            "id": 1,
+            "name": "autoCampSite",
+            "displayName": "オートキャンプ場"
+        },
+        {
+            "id": 2,
+            "name": "campSite",
+            "displayName": "林間キャンプ場"
+        },
+        {
+            "id": 3,
+            "name": "lodge",
+            "displayName": "ロッジ"
+        },
+        {
+            "id": 4,
+            "name": "bungalow",
+            "displayName": "バンガロー"
+        }
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "name": "bath",
+            "displayName": "お風呂"
+        },
+        {
+            "id": 2,
+            "name": "shower",
+            "displayName": "シャワー"
+        },
+        {
+            "id": 3,
+            "name": "dumSite",
+            "displayName": "ゴミ捨て場"
+        },
+        {
+            "id": 4,
+            "name": "laundry",
+            "displayName": "ランドリー"
+        }
+    ],
+    "prefectures": [
+        {
+            "id": 1,
+            "name": "ibaragi",
+            "displayName": "茨城県"
+        },
+        {
+            "id": 2,
+            "name": "tochigi",
+            "displayName": "栃木県"
+        },
+        {
+            "id": 3,
+            "name": "gunnma",
+            "displayName": "群馬県"
+        },
+        {
+            "id": 4,
+            "name": "saitama",
+            "displayName": "埼玉県"
+        },
+        {
+            "id": 5,
+            "name": "chiba",
+            "displayName": "千葉県"
+        },
+        {
+            "id": 6,
+            "name": "tokyo",
+            "displayName": "東京都"
+        },
+        {
+            "id": 7,
+            "name": "kanagawa",
+            "displayName": "神奈川県"
+        }
+    ]
+}
