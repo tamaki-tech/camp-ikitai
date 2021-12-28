@@ -34,19 +34,12 @@ CREATE TABLE site_type (
     ${commonColumns}
 );
 
-CREATE TABLE prefecture (
-    id INT PRIMARY KEY,
-    name varchar (30),
-    display_name varchar(30),
-    ${commonColumns}
-);
-
 CREATE TABLE camp_site (
     id INT PRIMARY KEY,
     site_type_id INT REFERENCES site_type,
     site_name varchar(200),
     addition varchar(1000),
-    prefecture_id INT REFERENCES prefecture,
+    prefecture varchar(30),
     access varchar(100),
     phone_number varchar(30),
     url varchar(100),
@@ -59,6 +52,7 @@ CREATE TABLE camp_site (
 
 CREATE TABLE facility (
     id INT PRIMARY KEY,
+    label VARCHAR(30),
     name varchar(30),
     display_name varchar(30),
     ${commonColumns}
