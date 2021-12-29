@@ -1,9 +1,12 @@
 package jp.co.campikitai.interfaces;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.campikitai.domain.campSite.CampSiteService;
@@ -28,4 +31,13 @@ public class CampSiteController {
         return campSiteService.init();
     }
 
+    @GetMapping("/search")
+    public List<CampSiteDto> search(
+            @RequestParam(value = "pref", required = false) String[] pref,
+            @RequestParam(value = "feature", required = false) String[] feature,
+            @RequestParam(value = "keyword", required = false) String keyword) {
+        return campSiteService.search(
+                Arrays.asList(Optional.ofNullable(pref).orElse(new String[0])),
+                Arrays.asList(Optional.ofNullable(feature).orElse(new String[0])));
+    }
 }
