@@ -1,12 +1,9 @@
 package jp.co.campikitai.domain.campSite.specification;
 
 import java.util.List;
-
 import javax.persistence.criteria.JoinType;
-
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
-
 import jp.co.campikitai.domain.campSite.CampSiteEntity;
 
 @Component

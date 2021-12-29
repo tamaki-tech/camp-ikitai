@@ -1,10 +1,8 @@
 package jp.co.campikitai.domain.campSite.dto;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 
 @Data

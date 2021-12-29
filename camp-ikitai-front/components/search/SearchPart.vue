@@ -46,7 +46,7 @@
     <br />
     <v-row v-if="$vuetify.breakpoint.mobile" no-gutters>
       <v-col>
-        <v-select v-model="selectedItem" :items="selectItems" outlined></v-select>
+        <v-select v-model="selectedSortItem" :items="sortItems" outlined></v-select>
       </v-col>
     </v-row>
   </div>
@@ -66,11 +66,11 @@ export default class SearchPart extends Vue {
   @PropSync('keyword', { type: String, default: '' })
   searchKeyword!: string
 
-  @PropSync('selected', { type: String, default: '' })
-  selectedItem!: string
+  @PropSync('selected-Sort', { type: String, default: '' })
+  selectedSortItem!: string
 
   @Prop()
-  selectItems!: []
+  sortItems!: []
 
   showPrefSearchDialog() {
     this.prefSearchDialogShowFlg = true

@@ -7,8 +7,8 @@
           :pref-dialog.sync="prefSearchDialogShowFlg"
           :feature-dialog.sync="featureSearchDialogShowFlg"
           :keyword.sync="searchWords"
-          :selected.sync="selected"
-          :select-items="items"
+          :selected-sort.sync="selected"
+          :sort-items="items"
           @search="search"
         />
       </v-sheet>
@@ -26,7 +26,19 @@
         </v-col>
       </v-row>
     </div>
-    <camp-site-list :camp-site-infoes="dispSiteList" />
+    <template v-if="dispSiteList.length > 0">
+      <camp-site-list :camp-site-infoes="dispSiteList" />
+    </template>
+    <template v-else>
+      <v-sheet rounded shaped class="rounded-xl">
+        <div class="ml-10">
+          <p>
+            ご指定の条件に該当するキャンプ場は見つかりませんでした。<br />
+            検索条件を変更して、再度検索してください。
+          </p>
+        </div>
+      </v-sheet>
+    </template>
     <br />
 
     <!-- 詳細検索ダイアログ -->
