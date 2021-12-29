@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,5 +35,11 @@ public class CampSiteController {
         return campSiteService.search(
                 Arrays.asList(Optional.ofNullable(pref).orElse(new String[0])),
                 Arrays.asList(Optional.ofNullable(feature).orElse(new String[0])));
+    }
+
+    @GetMapping("/{id}")
+    public CampSiteDto get(@PathVariable("id") String id) {
+        // TODO Bad Request
+        return campSiteService.get(Integer.parseInt(id));
     }
 }

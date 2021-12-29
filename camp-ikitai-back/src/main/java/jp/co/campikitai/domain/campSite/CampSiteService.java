@@ -35,4 +35,10 @@ public class CampSiteService {
                 specification.facilityIn(facility).and(specification.prefIn(pref)));
         return factory.map(campSites, CampSiteDto.class);
     }
+
+    public CampSiteDto get(int id) {
+        var hoge = campSiteRepository.findById(id);
+        var fuga = factory.map(hoge, CampSiteDto.class);
+        return factory.map(campSiteRepository.findById(id), CampSiteDto.class);
+    }
 }
