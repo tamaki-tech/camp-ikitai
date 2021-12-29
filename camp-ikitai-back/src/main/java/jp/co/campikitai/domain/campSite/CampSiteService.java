@@ -32,10 +32,7 @@ public class CampSiteService {
     }
 
     public List<CampSiteDto> search(List<String> prefs, List<String> facilities) {
-        // 都道府県検索条件
         Specification<CampSiteEntity> searchSpec = specification.prefIn(prefs);
-
-        // 設備検索用クエリの作成
         for (String facility : facilities) {
             searchSpec = searchSpec.and(specification.facilityEqual(facility));
         }
