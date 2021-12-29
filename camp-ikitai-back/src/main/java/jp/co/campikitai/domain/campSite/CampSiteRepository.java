@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CampSiteRepository
                 extends JpaRepository<CampSiteEntity, Integer>, JpaSpecificationExecutor<CampSiteEntity> {
-
         @Query("SELECT campSite FROM CampSiteEntity campSite WHERE campSite.id = :id")
         CampSiteEntity findById(@Param("id") int id);
 }

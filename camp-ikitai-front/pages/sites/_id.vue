@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="mounted">
     <v-spacer></v-spacer>
     <v-sheet rounded shaped align="center" class="rounded-xl">
       <v-sheet max-width="900" align="left">
@@ -16,14 +16,14 @@
               <h3>
                 <font color="gray">
                   {{
-                    `${campSiteInfo.address.pref} ${campSiteInfo.address.city}`
+                    `${campSiteInfo.address}`
                   }}
                 </font>
               </h3>
             </v-col>
           </v-row>
           <sns-icons />
-          <facility-exist-part :camp-site-info="campSiteInfo" />
+          <!-- <facility-exist-part :camp-site-info="campSiteInfo" /> -->
           <v-row class="mt-3">
             <v-col>
               <!-- tentアイコン使ってるところ共通化する -->
@@ -97,22 +97,24 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
 
 @Component
 export default class SiteDetail extends Vue {
   campSiteService!: CampSiteService
-  campSiteInfo: CampSiteInfo = new CampSiteInfo()
+  campSiteInfo!: CampSiteInfo
   center = [0, 0]
+  mounted = false
 
   async fetch() {
     this.campSiteService = await ServiceFactory.getContentService()
     this.campSiteInfo = await this.campSiteService.searchById(
       this.$route.params.id
     )
-    this.center = this.campSiteInfo.coordinate
+    this.center = [this.campSiteInfo.latitude, this.campSiteInfo.longitude]
+    this.mounted = true
   }
 }
 </script>

@@ -111,12 +111,17 @@ export default class Index extends Vue {
     const prefectures = this.$route.query.pref
     const features = this.$route.query.feature
     const keywords = this.$route.query.keyword
-    this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
-    this.selectedFeatureItems = features ? (features as string[]) : []
+    this.selectedPrefItems = prefectures ? this.isStrOrArry(prefectures) : []
+    this.selectedFeatureItems = features ? this.isStrOrArry(features) : []
     if (keywords) {
       this.searchWords =
         typeof keywords === 'string' ? keywords : keywords.join(' ')
     }
+  }
+
+  isStrOrArry(paramItem: any) {
+    // クエリパラメータに１件のみ存在する場合、配列ではなく文字列で返却される際の考慮
+    return typeof paramItem === 'string' ? [paramItem] : paramItem
   }
 
   async search() {
@@ -126,7 +131,6 @@ export default class Index extends Vue {
       this.selectedPrefItems,
       this.selectedFeatureItems
     )
-    // 検索
     this.dispSiteList = await this.campSiteService.search(param)
     this.$router.push(`/search?${param}`)
   }

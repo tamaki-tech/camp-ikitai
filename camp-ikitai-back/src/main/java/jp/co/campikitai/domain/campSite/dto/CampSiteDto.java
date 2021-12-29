@@ -20,13 +20,23 @@ public class CampSiteDto {
     private String url;
     private String price;
     private String imagePath;
-    private String latitude;
-    private String longitude;
+    @JsonIgnore private String latitude;
+    @JsonIgnore private String longitude;
 
     @JsonIgnore private List<FacilityDto> facilityEntities;
 
     @JsonGetter("facilities")
     private List<FacilityDto> getFacilities(){
         return this.getFacilityEntities();
+    }
+
+    @JsonGetter("latitude")
+    private double getLat(){
+        return Double.parseDouble(this.latitude);
+    }
+
+    @JsonGetter("longitude")
+    private double getLng(){
+        return Double.parseDouble(this.longitude);
     }
 }

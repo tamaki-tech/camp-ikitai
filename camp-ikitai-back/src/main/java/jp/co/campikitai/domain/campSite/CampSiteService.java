@@ -32,13 +32,11 @@ public class CampSiteService {
 
     public List<CampSiteDto> search(List<String> pref, List<String> facility) {
         List<CampSiteEntity> campSites = campSiteRepository.findAll(
-                specification.facilityIn(facility).and(specification.prefIn(pref)));
+                specification.prefIn(pref).and(specification.facilityIn(facility)));
         return factory.map(campSites, CampSiteDto.class);
     }
 
     public CampSiteDto get(int id) {
-        var hoge = campSiteRepository.findById(id);
-        var fuga = factory.map(hoge, CampSiteDto.class);
         return factory.map(campSiteRepository.findById(id), CampSiteDto.class);
     }
 }

@@ -61,7 +61,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import { SearchUtils } from '@/domains/search/SearchUtils'
 import { Prefectures } from '~/domains/search/PrefectureItems'

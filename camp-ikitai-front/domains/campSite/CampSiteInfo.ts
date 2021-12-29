@@ -11,8 +11,8 @@ export interface CampSiteInfo {
   access: string
   phoneNumber: string
   url: string
-  latitude: string
-  longitude: string
+  latitude: number
+  longitude: number
   price: string
   address: string
 }

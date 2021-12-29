@@ -14,7 +14,7 @@ export default class CampSiteServiceImpl implements CampSiteService {
     ).data
   }
 
-  async searchById(): Promise<CampSiteInfo> {
-    return await Promise.resolve(new CampSiteInfo())
+  async searchById(id: string): Promise<CampSiteInfo> {
+    return (await axios.get(`${process.env.BACK_URL}api/campSites/${id}`)).data
   }
 }
