@@ -20,5 +20,7 @@
   <table-filter match-name="person_address" package="jp.co.campikitai.domain.persion"></table-filter>
   <table-filter match-name="site_type" package="jp.co.campikitai.domain.campSite"></table-filter>
   <table-filter match-name="camp_site" package="jp.co.campikitai.domain.campSite"></table-filter>
-
+  <table-filter match-name="facility" package="jp.co.campikitai.domain.campSite"></table-filter>
+  <table-filter match-name="prefecture" package="jp.co.campikitai.domain.campSite"></table-filter>
+  <table-filter match-name="camp_site_facility_rel" package="jp.co.campikitai.domain.campSite"></table-filter>
 </hibernate-reverse-engineering>

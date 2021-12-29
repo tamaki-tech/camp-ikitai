@@ -1,0 +1,46 @@
+{
+    "siteTypes": [
+        {
+            "id": 1,
+            "name": "autoCampSite",
+            "displayName": "オートキャンプ場"
+        },
+        {
+            "id": 2,
+            "name": "campSite",
+            "displayName": "林間キャンプ場"
+        },
+        {
+            "id": 3,
+            "name": "lodge",
+            "displayName": "ロッジ"
+        },
+        {
+            "id": 4,
+            "name": "bungalow",
+            "displayName": "バンガロー"
+        }
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "name": "bath",
+            "displayName": "お風呂"
+        },
+        {
+            "id": 2,
+            "name": "shower",
+            "displayName": "シャワー"
+        },
+        {
+            "id": 3,
+            "name": "dumSite",
+            "displayName": "ゴミ捨て場"
+        },
+        {
+            "id": 4,
+            "name": "laundry",
+            "displayName": "ランドリー"
+        }
+    ]
+}

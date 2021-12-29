@@ -52,11 +52,12 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
-import { Features, Prefectures } from '@/domains/search/SearchItems'
 import { SearchUtils } from '@/domains/search/SearchUtils'
+import { Prefectures } from '~/domains/search/PrefectureItems'
+import { InitResponse, SearchItems } from '~/domains/campSite/SearchItems'
 
 @Component
 export default class Index extends Vue {
@@ -70,8 +71,9 @@ export default class Index extends Vue {
   featureSearchDialogShowFlg = false
   searchWords = ''
 
+  initResponse!: InitResponse
   prefItems = Prefectures
-  featureItems = Features
+  featureItems: SearchItems[] = []
 
   selected = ''
   page = 1
@@ -87,38 +89,49 @@ export default class Index extends Vue {
   async fetch() {
     this.selected = this.items[1]
     this.campSiteService = await ServiceFactory.getContentService()
+    this.initResponse = await this.campSiteService.init()
+    this.setFacilities()
     this.setParams()
     this.search()
+  }
+
+  // TODO 共通化
+  setFacilities() {
+    this.featureItems.push({
+      label: '施設タイプ',
+      items: this.initResponse.siteTypes,
+    })
+    this.featureItems.push({
+      label: '場内設備',
+      items: this.initResponse.facilities,
+    })
   }
 
   setParams() {
     const prefectures = this.$route.query.pref
     const features = this.$route.query.feature
     const keywords = this.$route.query.keyword
-    this.selectedPrefItems = prefectures ? (prefectures as string[]) : []
-    this.selectedFeatureItems = features ? (features as string[]) : []
+    this.selectedPrefItems = prefectures ? this.isStrOrArry(prefectures) : []
+    this.selectedFeatureItems = features ? this.isStrOrArry(features) : []
     if (keywords) {
       this.searchWords =
         typeof keywords === 'string' ? keywords : keywords.join(' ')
     }
   }
 
-  async search() {
-    // 検索
-    this.dispSiteList = await this.campSiteService.search(
-      SearchUtils.createParam(
-        this.searchWords.split(' '),
-        this.selectedPrefItems,
-        this.selectedFeatureItems
-      )
-    )
+  isStrOrArry(paramItem: any) {
+    // クエリパラメータに１件のみ存在する場合、配列ではなく文字列で返却される際の考慮
+    return typeof paramItem === 'string' ? [paramItem] : paramItem
+  }
 
+  async search() {
     // URL繋げる
     const param = SearchUtils.createGetUriParam(
       this.searchWords.split(' '),
       this.selectedPrefItems,
       this.selectedFeatureItems
     )
+    this.dispSiteList = await this.campSiteService.search(param)
     this.$router.push(`/search?${param}`)
   }
 

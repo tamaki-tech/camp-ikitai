@@ -82,7 +82,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 
 @Component
 export default class FacilityExistPart extends Vue {

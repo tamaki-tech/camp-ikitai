@@ -1,7 +1,8 @@
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
-import { SearchParam } from '../search/SearchUtils';
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
+import { InitResponse } from './SearchItems'
 
 export default interface CampSiteService {
-  search: (param: SearchParam[]) => Promise<CampSiteInfo[]>
+  init: () => Promise<InitResponse>
+  search: (param: string) => Promise<CampSiteInfo[]>
   searchById: (id: string) => Promise<CampSiteInfo>
 }

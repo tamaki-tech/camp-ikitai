@@ -61,10 +61,12 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
-import { Features, Prefectures } from '@/domains/search/SearchItems'
 import { SearchUtils } from '@/domains/search/SearchUtils'
+import { Prefectures } from '~/domains/search/PrefectureItems'
+import ServiceFactory from '~/domains/ServiceFactory'
+import { InitResponse, SearchItems } from '~/domains/campSite/SearchItems'
 
 @Component
 export default class Index extends Vue {
@@ -79,8 +81,26 @@ export default class Index extends Vue {
   selectedPrefItems = []
   selectedFeatureItems = []
 
+  initResponse!: InitResponse
   prefItems = Prefectures
-  featureItems = Features
+  featureItems: SearchItems[] = []
+
+  async fetch() {
+    this.campSiteService = await ServiceFactory.getContentService()
+    this.initResponse = await this.campSiteService.init()
+    this.setFacilities()
+  }
+
+  setFacilities() {
+    this.featureItems.push({
+      label: '施設タイプ',
+      items: this.initResponse.siteTypes,
+    })
+    this.featureItems.push({
+      label: '場内設備',
+      items: this.initResponse.facilities,
+    })
+  }
 
   showPrefSearchDialog() {
     this.prefSearchDialogShowFlg = true

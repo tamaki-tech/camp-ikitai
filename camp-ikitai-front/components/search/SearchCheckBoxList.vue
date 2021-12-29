@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, PropSync } from 'nuxt-property-decorator'
-import SearchItem from '@/domains/search/SearchItems'
+import { SearchItems } from '~/domains/campSite/SearchItems'
 
 @Component
 export default class SearchCheckBoxList extends Vue {
@@ -23,7 +23,7 @@ export default class SearchCheckBoxList extends Vue {
   showDialog!: boolean
 
   @Prop()
-  items!: SearchItem[]
+  items!: SearchItems[]
 
   dispItems = []
 }
