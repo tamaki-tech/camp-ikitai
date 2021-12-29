@@ -23,10 +23,6 @@ public class CampSiteService {
     private final CampSiteSpecification specification;
     private final Factory factory;
 
-    public List<CampSiteDto> findAll() {
-        return factory.map(IterableUtils.toList(campSiteRepository.findAll()), CampSiteDto.class);
-    }
-
     public InitResponse init() {
         InitResponse response = new InitResponse();
         response.setFacilities(factory.map(IterableUtils.toList(facilityRepository.findAll()), FacilityDto.class));

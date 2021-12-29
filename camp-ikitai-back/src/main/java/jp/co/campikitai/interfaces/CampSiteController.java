@@ -21,11 +21,6 @@ public class CampSiteController {
 
     private final CampSiteService campSiteService;
 
-    @GetMapping("")
-    public List<CampSiteDto> find() {
-        return campSiteService.findAll();
-    }
-
     @GetMapping("/init")
     public InitResponse init() {
         return campSiteService.init();
