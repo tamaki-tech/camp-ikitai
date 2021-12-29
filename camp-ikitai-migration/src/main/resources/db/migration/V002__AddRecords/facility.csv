@@ -3,3 +3,9 @@ id,name,display_name
 2,shower,シャワー
 3,dumSite,ゴミ捨て場
 4,laundry,ランドリー
+5,bonfire,直火OK
+6,notBonfire,焚き火NG
+7,pizza,ピザ釜
+8,nearStation,駅から徒歩圏内
+9,nearbassStop,バス停から徒歩圏内
+10,carOn,車乗り入れ可

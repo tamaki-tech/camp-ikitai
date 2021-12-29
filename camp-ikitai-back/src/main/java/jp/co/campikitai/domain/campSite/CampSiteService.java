@@ -3,6 +3,7 @@ package jp.co.campikitai.domain.campSite;
 import java.util.List;
 
 import org.apache.commons.collections4.IterableUtils;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import jp.co.campikitai.common.Factory;
@@ -30,10 +31,15 @@ public class CampSiteService {
         return response;
     }
 
-    public List<CampSiteDto> search(List<String> pref, List<String> facility) {
-        List<CampSiteEntity> campSites = campSiteRepository.findAll(
-                specification.prefIn(pref).and(specification.facilityIn(facility)));
-        return factory.map(campSites, CampSiteDto.class);
+    public List<CampSiteDto> search(List<String> prefs, List<String> facilities) {
+        // 都道府県検索条件
+        Specification<CampSiteEntity> searchSpec = specification.prefIn(prefs);
+
+        // 設備検索用クエリの作成
+        for (String facility : facilities) {
+            searchSpec = searchSpec.and(specification.facilityEqual(facility));
+        }
+        return factory.map(campSiteRepository.findAll(searchSpec), CampSiteDto.class);
     }
 
     public CampSiteDto get(int id) {

@@ -92,10 +92,10 @@ export default class Index extends Vue {
   }
 
   setFacilities() {
-    this.featureItems.push({
-      label: '施設タイプ',
-      items: this.initResponse.siteTypes,
-    })
+    // this.featureItems.push({
+    //   label: '施設タイプ',
+    //   items: this.initResponse.siteTypes,
+    // })
     this.featureItems.push({
       label: '場内設備',
       items: this.initResponse.facilities,
