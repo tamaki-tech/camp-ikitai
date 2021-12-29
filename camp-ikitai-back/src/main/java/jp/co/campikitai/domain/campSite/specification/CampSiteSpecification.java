@@ -15,9 +15,7 @@ public class CampSiteSpecification {
         return (root, query, cb) -> pref.isEmpty() ? cb.conjunction() : root.get("prefecture").in(pref);
     }
 
-    public Specification<CampSiteEntity> facilityIn(List<String> facility) {
-        return (root, query, cb) -> facility.isEmpty()
-                ? cb.conjunction()
-                : root.join("facilityEntities", JoinType.LEFT).get("name").in(facility);
+    public Specification<CampSiteEntity> facilityEqual(String facility) {
+        return (root, query, cb) -> cb.equal(root.join("facilityEntities", JoinType.LEFT).get("name"), facility);
     }
 }

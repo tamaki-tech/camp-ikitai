@@ -97,10 +97,10 @@ export default class Index extends Vue {
 
   // TODO 共通化
   setFacilities() {
-    this.featureItems.push({
-      label: '施設タイプ',
-      items: this.initResponse.siteTypes,
-    })
+    // this.featureItems.push({
+    //   label: '施設タイプ',
+    //   items: this.initResponse.siteTypes,
+    // })
     this.featureItems.push({
       label: '場内設備',
       items: this.initResponse.facilities,
