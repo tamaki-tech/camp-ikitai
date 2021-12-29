@@ -16,7 +16,7 @@
                 <h3 v-else>{{ site.siteName }}</h3>               
               </v-row>
               <v-row no-gutters>
-                <div class="text-caption mt-1 mb-1" >{{ `${site.address.pref} ${site.address.city} ${site.address.otherAddress}` }}</div>
+                <div class="text-caption mt-1 mb-1" >{{ `${site.address}` }}</div>
               </v-row>
               <v-row no-gutters>
                 <div class="text-caption">
@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 
 @Component
 export default class Index extends Vue {

@@ -38,6 +38,7 @@ CREATE TABLE camp_site (
     id INT PRIMARY KEY,
     site_type_id INT REFERENCES site_type,
     site_name varchar(200),
+    address varchar(100),
     addition varchar(1000),
     prefecture varchar(30),
     access varchar(100),

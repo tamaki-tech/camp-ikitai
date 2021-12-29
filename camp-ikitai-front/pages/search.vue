@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import CampSiteInfo from '@/domains/campSite/CampSiteInfo'
+import { CampSiteInfo } from '@/domains/campSite/CampSiteInfo'
 import CampSiteService from '@/domains/campSite/CampSiteService'
 import ServiceFactory from '@/domains/ServiceFactory'
 import { SearchUtils } from '@/domains/search/SearchUtils'
@@ -120,21 +120,14 @@ export default class Index extends Vue {
   }
 
   async search() {
-    // 検索
-    this.dispSiteList = await this.campSiteService.search(
-      SearchUtils.createParam(
-        this.searchWords.split(' '),
-        this.selectedPrefItems,
-        this.selectedFeatureItems
-      )
-    )
-
     // URL繋げる
     const param = SearchUtils.createGetUriParam(
       this.searchWords.split(' '),
       this.selectedPrefItems,
       this.selectedFeatureItems
     )
+    // 検索
+    this.dispSiteList = await this.campSiteService.search(param)
     this.$router.push(`/search?${param}`)
   }
 
