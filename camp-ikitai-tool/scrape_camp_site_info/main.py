@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+import pandas as pd
 import chromedriver_binary
 
 
@@ -33,11 +34,43 @@ class Main:
         results = []
         for i, url in enumerate(url_list):
             driver.get(url)
-            site_name = driver.find_element_by_class_name("name").text
-            results.append({"id": i, "site_name": site_name, "address": ""})
 
-        # 結果表示
-        print(results)
+            # サイト名
+            site_name = driver.find_element_by_class_name("name").text
+
+            # 概要文章
+            addition = driver.find_element_by_class_name("catchPhrase").text
+
+            # 住所
+            elements = driver.find_elements_by_class_name("text")
+            address = ""
+            for element in elements:
+                if "〒" in element.text:
+                    address = element.text
+
+            # 電話番号
+            phone_number = driver.find_element_by_class_name("tel").text
+
+            results.append(
+                {
+                    "id": i,
+                    "site_type_id": 1,
+                    "site_name": site_name,
+                    "addition": addition,
+                    "address": address,
+                    "prefecture": "埼玉",
+                    "access": "",
+                    "phone_number": phone_number,
+                    "url": "",
+                    "price": "",
+                    "image_path": "",
+                    "latitude": 0,
+                    "longitude": 0,
+                }
+            )
+
+        df = pd.io.json.json_normalize(results)
+        df.to_csv("camp_site.csv", index=False)
 
 
 if __name__ == "__main__":
