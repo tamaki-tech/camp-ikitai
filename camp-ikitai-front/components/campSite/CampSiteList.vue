@@ -8,7 +8,9 @@
         <div class="mt-4 mb-4">
           <v-row>
             <v-col cols="4" align-self="center">
-              <v-img contain max-height="230px" max-width="230px" :src="site.imagePath" />
+              <v-img v-if="site.imagePath" contain max-height="230px" max-width="230px" :src="site.imagePath" />
+              <v-img v-else contain max-height="230px" max-width="230px" src="no_image_yoko.jpeg" />
+          
             </v-col>
             <v-col cols="7">
               <v-row no-gutters>
